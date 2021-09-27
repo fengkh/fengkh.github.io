@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>冯康慧</title>
+  
+  
+  <link href="http://www.fengkh.com/blog/atom.xml" rel="self"/>
+  
+  <link href="http://www.fengkh.com/blog/"/>
+  <updated>2021-09-27T02:54:54.944Z</updated>
+  <id>http://www.fengkh.com/blog/</id>
+  
+  <author>
+    <name>冯康慧</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hello</title>
+    <link href="http://www.fengkh.com/blog/2021/09/27/hello/"/>
+    <id>http://www.fengkh.com/blog/2021/09/27/hello/</id>
+    <published>2021-09-27T02:54:54.000Z</published>
+    <updated>2021-09-27T02:54:54.944Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+</feed>
