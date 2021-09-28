@@ -6,7 +6,7 @@
   <link href="http://fengkh.com/atom.xml" rel="self"/>
   
   <link href="http://fengkh.com/"/>
-  <updated>2021-09-28T06:31:11.405Z</updated>
+  <updated>2021-09-28T08:15:38.644Z</updated>
   <id>http://fengkh.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Receptive Field</title>
+    <link href="http://fengkh.com/2021/09/28/Receptive-Field/"/>
+    <id>http://fengkh.com/2021/09/28/Receptive-Field/</id>
+    <published>2021-09-28T08:14:27.000Z</published>
+    <updated>2021-09-28T08:15:38.644Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-感受野（Receptive-Field）"><a href="#1-感受野（Receptive-Field）" class="headerlink" title="1.感受野（Receptive Field）"></a>1.感受野（Receptive Field）</h2>]]></content>
+    
+    
+    <summary type="html">感受野的介绍</summary>
+    
+    
+    
+    
+    <category term="Object detection" scheme="http://fengkh.com/tags/Object-detection/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
