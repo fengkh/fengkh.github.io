@@ -6,7 +6,7 @@
   <link href="http://fengkh.com/atom.xml" rel="self"/>
   
   <link href="http://fengkh.com/"/>
-  <updated>2021-09-28T01:16:34.604Z</updated>
+  <updated>2021-09-28T02:38:04.476Z</updated>
   <id>http://fengkh.com/</id>
   
   <author>
@@ -17,25 +17,20 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Day 1</title>
-    <link href="http://fengkh.com/2021/09/28/Day-1/"/>
-    <id>http://fengkh.com/2021/09/28/Day-1/</id>
-    <published>2021-09-28T01:16:34.000Z</published>
-    <updated>2021-09-28T01:16:34.604Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>hello</title>
+    <title>Hello World</title>
     <link href="http://fengkh.com/2021/09/27/hello/"/>
     <id>http://fengkh.com/2021/09/27/hello/</id>
     <published>2021-09-27T02:54:54.000Z</published>
-    <updated>2021-09-27T02:54:54.944Z</updated>
+    <updated>2021-09-28T02:38:04.476Z</updated>
     
+    <content type="html"><![CDATA[<p>也没有什么具体的原因，大概就是脑子一热，想着做个自己博客，记录读博期间的所见所闻所感。本博客主要以深度学习中的计算机视觉方向为主（本人读博方向），不定期更新。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;也没有什么具体的原因，大概就是脑子一热，想着做个自己博客，记录读博期间的所见所闻所感。本博客主要以深度学习中的计算机视觉方向为主（本人读博方向），不定期更新。&lt;/p&gt;
+</summary>
+      
     
     
     
