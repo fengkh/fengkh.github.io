@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://fengkh.com/2021/09/28/Camouflaged%20Object%20detection/</loc>
-    
-    <lastmod>2021-10-01</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://fengkh.com/2021/09/27/Hello%20World/</loc>
     
     <lastmod>2021-10-01</lastmod>
@@ -75,13 +68,6 @@
   
   <url>
     <loc>http://fengkh.com/tags/%E5%8A%A8%E6%80%81/</loc>
-    <lastmod>2021-10-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://fengkh.com/tags/Papers-read/</loc>
     <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
