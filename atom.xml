@@ -6,7 +6,7 @@
   <link href="http://fengkh.com/atom.xml" rel="self"/>
   
   <link href="http://fengkh.com/"/>
-  <updated>2021-10-01T14:06:51.466Z</updated>
+  <updated>2021-10-01T14:14:41.571Z</updated>
   <id>http://fengkh.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://fengkh.com/2021/09/27/Hello%20World/"/>
     <id>http://fengkh.com/2021/09/27/Hello%20World/</id>
     <published>2021-09-27T02:54:54.000Z</published>
-    <updated>2021-10-01T14:06:51.466Z</updated>
+    <updated>2021-10-01T14:14:41.571Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1-博客内容"><a href="#1-博客内容" class="headerlink" title="1.博客内容"></a>1.博客内容</h3><p>也没有什么具体的原因，大概就是脑子一热，想着做个自己的博客。</p><p>本博客主要以深度学习中的计算机视觉方向为主（本人读博方向，学习中），不定期更新。</p><h3 id="2-特别说明"><a href="#2-特别说明" class="headerlink" title="2.特别说明"></a>2.特别说明</h3><p>要特别说明的是本博客的框架是hexo，采用评论系统 disqus（需要科学上网），点击头像跳转github也需要科学上网。（不是BUG！！！)</p><p>本博客还有打赏功能哦！~</p><p>另外，祝自己早日毕业。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="1-博客内容"><a href="#1-博客内容" class="headerlink" title="1.博客内容"></a>1.博客内容</h3><p>也没有什么具体的原因，大概就是脑子一热，想着做个自己的博客。</p><p>本博客主要以深度学习中的计算机视觉方向为主（本人读博方向，学习中），不定期更新。</p><h3 id="2-特别说明"><a href="#2-特别说明" class="headerlink" title="2.特别说明"></a>2.特别说明</h3><p>要特别说明的是本博客的框架是hexo，采用评论系统 disqus（需要科学上网），点击头像跳转github也需要科学上网。</p><p>本博客还有打赏功能哦！~</p>]]></content>
     
     
     <summary type="html">一些写在前面的东西。</summary>
