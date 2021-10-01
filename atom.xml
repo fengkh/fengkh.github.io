@@ -6,7 +6,7 @@
   <link href="http://fengkh.com/atom.xml" rel="self"/>
   
   <link href="http://fengkh.com/"/>
-  <updated>2021-09-28T06:31:11.405Z</updated>
+  <updated>2021-10-01T14:09:28.451Z</updated>
   <id>http://fengkh.com/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Camouflaged Object Detection 阅读笔记（上）</title>
+    <link href="http://fengkh.com/2021/09/28/Camouflaged%20Object%20detection/"/>
+    <id>http://fengkh.com/2021/09/28/Camouflaged%20Object%20detection/</id>
+    <published>2021-09-28T08:14:27.000Z</published>
+    <updated>2021-10-01T14:09:28.451Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="0-简介"><a href="#0-简介" class="headerlink" title="0.简介"></a>0.简介</h3><p>伪装目标检测（Camouflaged object detection，COD）旨在对几乎完全融入周围环境的目标进行识别。该问题的主要难点在于：待检测目标与周围背景具有极高的内在相似性。本文为了解决这样一个问题，提出了名为COK10K的伪装目标检测数据集，并针对该数据集，提出了Search Identification Network(SINet)网络模型。该网络模型在包括COD10K以及其他测试数据集上与其他最新的目标检测模型做对比实验，实验结果优于其他所有模型。</p><h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1.Introduction"></a>1.Introduction</h3>]]></content>
+    
+    
+    <summary type="html">这是一篇2020年的CVPR，论文工作：提出数据集COD10K和针对该数据集的伪装目标检测模型。</summary>
+    
+    
+    
+    
+    <category term="Papers read" scheme="http://fengkh.com/tags/Papers-read/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="http://fengkh.com/2021/09/27/Hello%20World/"/>
     <id>http://fengkh.com/2021/09/27/Hello%20World/</id>
     <published>2021-09-27T02:54:54.000Z</published>
-    <updated>2021-09-28T06:31:11.405Z</updated>
+    <updated>2021-10-01T14:06:51.466Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-博客内容"><a href="#1-博客内容" class="headerlink" title="1.博客内容"></a>1.博客内容</h3><p>也没有什么具体的原因，大概就是脑子一热，想着做个自己的博客。</p><p>本博客主要以深度学习中的计算机视觉方向为主（本人读博方向，学习中），不定期更新。</p><h3 id="2-特别说明"><a href="#2-特别说明" class="headerlink" title="2.特别说明"></a>2.特别说明</h3><p>要特别说明的是本博客的框架是hexo，采用评论系统 disqus（需要科学上网），点击头像跳转github也需要科学上网。（不是BUG！！！)</p><p>本博客还有打赏功能哦！~</p><p>另外，祝自己早日毕业。</p>]]></content>
     
@@ -31,7 +50,7 @@
     
     
     
-    <category term="状态" scheme="http://fengkh.com/tags/%E7%8A%B6%E6%80%81/"/>
+    <category term="动态" scheme="http://fengkh.com/tags/%E5%8A%A8%E6%80%81/"/>
     
   </entry>
   
