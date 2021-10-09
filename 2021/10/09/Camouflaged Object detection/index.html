@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Camouflaged Object Detection 阅读笔记 | Kyrie&#39;s Blog</title>
+  <meta name="description" content="这是一篇2020年的CVPR，论文工作：提出数据集COD10K和针对该数据集的伪装目标检测模型。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Camouflaged Object Detection 阅读笔记">
+<meta property="og:url" content="http://fengkh.com/2021/10/09/Camouflaged%20object%20detection/index.html">
+<meta property="og:site_name" content="冯康慧">
+<meta property="og:description" content="这是一篇2020年的CVPR，论文工作：提出数据集COD10K和针对该数据集的伪装目标检测模型。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://fengkh.com/2021/10/09/Camouflaged%20object%20detection/1_1.jpg">
+<meta property="og:image" content="http://fengkh.com/2021/10/09/Camouflaged%20object%20detection/3_1.jpg">
+<meta property="article:published_time" content="2021-10-09T12:35:40.000Z">
+<meta property="article:modified_time" content="2021-10-09T13:09:40.189Z">
+<meta property="article:author" content="冯康慧">
+<meta property="article:tag" content="论文阅读">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://fengkh.com/2021/10/09/Camouflaged%20object%20detection/1_1.jpg">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://fengkh.com/2021/10/09/Camouflaged%20object%20detection/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="冯康慧" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/fengkh" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">冯康慧</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Bachelor</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Chengdu, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/fengkh" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p> <p>商务合作请联系李秘书。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81/" rel="tag">动态</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="tag">论文阅读</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/%E5%8A%A8%E6%80%81/" style="font-size: 13px;">动态</a> <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" style="font-size: 13px;">论文阅读</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/10/09/Camouflaged%20object%20detection/" class="title">Camouflaged Object Detection 阅读笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-10-09T12:35:40.000Z" itemprop="datePublished">2021-10-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/09/27/Hello%20World/" class="title">Hello World</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-27T02:54:54.000Z" itemprop="datePublished">2021-09-27</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-%E6%A6%82%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">0.概要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">1. Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Related-Work"><span class="toc-number">3.</span> <span class="toc-text">2. Related Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Proposed-Dataset"><span class="toc-number">4.</span> <span class="toc-text">3. Proposed Dataset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Proposed-Framework"><span class="toc-number">5.</span> <span class="toc-text">4. Proposed Framework</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Overview"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 Overview</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-Search-Module%EF%BC%88SM%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 Search Module（SM）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-Identification-Module%EF%BC%88IM%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 Identification Module（IM）</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Camouflaged object detection" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Camouflaged Object Detection 阅读笔记
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/10/09/Camouflaged%20object%20detection/" class="article-date">
+	  <time datetime="2021-10-09T12:35:40.000Z" itemprop="datePublished">2021-10-09</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="tag">论文阅读</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/10/09/Camouflaged%20object%20detection/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.4k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="0-概要"><a href="#0-概要" class="headerlink" title="0.概要"></a>0.概要</h3><p> 伪装目标检测（Camouflaged object detection，COD）旨在对几乎完全融入周围环境的目标进行识别。该问题的主要难点在于：待检测目标与周围背景具有极高的内在相似性。本文为了解决这样一个问题，提出了名为COD10K的伪装目标检测数据集，并针对该数据集，提出了 Search Identification Network (SINet) 网络模型。该网络模型在包括COD10K以及其他测试数据集上与其他最新的目标检测模型做对比实验，实验结果优于其他所有模型。</p>
+<p><a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content_CVPR_2020/html/Fan_Camouflaged_Object_Detection_CVPR_2020_paper.html">论文传送门</a>，<a target="_blank" rel="noopener" href="https://github.com/DengPingFan/SINet">源代码传送门</a>。</p>
+<h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><p>伪装目标检测大概需要做什么工作或者实现什么效果呢？如图1.1，第一行数据来自于COD10K数据集，第二行就是需要实现的检测效果。可以很清楚的看出，文章做的工作其实就是对于图片中一些边界与背景具有高相似度的物体进行识别或者分割。</p>
+<p><img src="/2021/10/09/Camouflaged%20object%20detection/1_1.jpg" alt="图1.1 部分COK10K数据集中数据（row 1）及模型识别效果（row 2）"></p>
+<p>​                                                    图1.1 部分COK10K数据集中数据（row 1）及模型识别效果（row 2）</p>
+<p>本文主要贡献：</p>
+<ol>
+<li><p>提出了COD10K数据集，专门用于COD。该数据集包括了10K张图片，目标类别包括78种水生、飞行、两栖动物、地面动物。其中每张图片的伪装目标都分层次地进行了标注，标注内容包括类别（category）、边界框（bounding-box）、对象等级（object-level）和实例等级（instance-level）。</p>
+</li>
+<li><p>通过对比COD10K和其他两个现有的数据集，本文提供了12个SOTA（state-of-the-art）基线（baseline）的严格评估，使文章中的研究成为最大的COD研究。</p>
+</li>
+<li><p>文章提出了SINet（Search and Identification Net）伪装目标检测框架，整个框架的训练时间仅为1小时，但是却在所有现有COD数据集上达到了SOTA的性能，在深度学习领域开创了首个完整的伪装目标检测的benchmark。</p>
+</li>
+</ol>
+<h3 id="2-Related-Work"><a href="#2-Related-Work" class="headerlink" title="2. Related Work"></a>2. Related Work</h3><p>通过查阅文献，可以将目标大致分类为三种类别：<strong>一般目标</strong>、<strong>突出目标</strong>、<strong>伪装目标</strong>。</p>
+<ul>
+<li><p>GOD（Generic Object Detection）：</p>
+<p>最流行计算机视觉的思想之一中认为一般目标可能是突出的，也可能是伪装的；伪装目标可以被看做是复杂情况的一般目标。典型的GOD任务包括了语义分割和全景分割任务。</p>
+</li>
+<li><p>SOD（Salient Object Detection）:</p>
+<p>SOD任务旨在识别图片中最突出的（most attention-grabbing）目标，并且分割出它的像素级轮廓。尽管“突出”和“伪装”两个词语的意思是相对立的，但是包含突出目标的图片可以作为伪装目标检测数据集的负样本。</p>
+</li>
+<li><p>COD（Camouflaged Object Detection）：</p>
+<p><u>伪装目标分类</u>：伪装图片可以被粗略的分为两类——天然伪装和人工伪装。天然伪装是指动物为了避免被其天敌猎杀从而实现的一种生存技能；人工伪装通常发生在产品的制造过程（缺陷）或者用于游戏、艺术的隐藏信息。</p>
+<p><u>评估矩阵</u>：由于MAE（Mean absolute error）已经被广泛应用于SOD任务中，因此文本也尝试使用MAE作为评估预测图C和真实结果G之间像素级准确率的度量。虽然MAE能够评估误差和错误的数量，但是MAE不能确定错误发生的地方。所以将采用基于人类视觉感知的E-measure来评估整体结果和伪装目标检测的定位精度。同时，由于伪装目标通常有不同的形状，因此还需要一个用于评估结构相似度的度量，本文考虑了S-measure和F-measure作为该任务的度量模型。</p>
+</li>
+</ul>
+<h3 id="3-Proposed-Dataset"><a href="#3-Proposed-Dataset" class="headerlink" title="3. Proposed Dataset"></a>3. Proposed Dataset</h3><p>这是一个原文作者提出的一个有10K张伪装目标图片的数据集COD10K，其中的数据大部分来自Flicker（<u>笔者注：笔者这里怀疑是作者的笔误，并没有名为Flicker的图片网站，应该是<a target="_blank" rel="noopener" href="https://www.j-h-k.com/photography-flickr.html">Flickr</a></u>。），其余的图片（大概200张）来自于其他网站。同时为了避免选择偏差（selection bias），该数据集还搜集了3,000张突出目标图片，1,934张非伪装目标图片。关于数据集COD10K的具体细节如图3.1所示，（a）图表示了分类学系统及其直方图分布，（b）图代表了数据集中的图像分辨率分布，（c）图表示了词云分布，即标签中所用词语的地理分布，（d）图表示了不同类别的Object/Instance的数量分布，（e）图展示了一些子类。</p>
+<p><strong>关于Object和Instance的区分</strong>：作者强调现有的COD数据集主要聚焦在object-level上，然而能够一个对象解析为它的实例对于计算机视觉研究者们是否能够编辑或者理解一个场景来说是至关重要的。因此，作者进一步在实例级（instance-level）上标注了数据集。</p>
+<p>标注完成之后，从COD10K数据集中的每个子类中总共随机挑选6000张图片作为训练集，4000张图片作为测试集。</p>
+<p><img src="/2021/10/09/Camouflaged%20object%20detection/3_1.jpg" alt="图3.1 来自COD10K数据集的统计和伪装类别示例"></p>
+<p>​                                                                    图3.1 来自COD10K数据集的统计和伪装类别示例</p>
+<h3 id="4-Proposed-Framework"><a href="#4-Proposed-Framework" class="headerlink" title="4. Proposed Framework"></a>4. Proposed Framework</h3><h4 id="4-1-Overview"><a href="#4-1-Overview" class="headerlink" title="4.1 Overview"></a>4.1 Overview</h4><h4 id="4-2-Search-Module（SM）"><a href="#4-2-Search-Module（SM）" class="headerlink" title="4.2 Search Module（SM）"></a>4.2 Search Module（SM）</h4><h4 id="4-3-Identification-Module（IM）"><a href="#4-3-Identification-Module（IM）" class="headerlink" title="4.3 Identification Module（IM）"></a>4.3 Identification Module（IM）</h4>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/fengkh" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/fengkh" target="_blank"><span class="text-dark">冯康慧</span><small class="ml-1x">Bachelor</small></a></h3>
+        <div>fengkh.scu@gmail.com</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2021/09/27/Hello%20World/" title="Hello World"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="qq,wechat" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/fengkh" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by cofess </a>base on pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+    <script defer>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://fengkh.com/2021/10/09/Camouflaged%20object%20detection/';
+        
+        this.page.identifier = 'Camouflaged object detection';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'fengkh' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
