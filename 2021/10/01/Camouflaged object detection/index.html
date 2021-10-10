@@ -27,8 +27,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/1_1.jpg">
 <meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/3_1.jpg">
+<meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/4_1.jpg">
 <meta property="article:published_time" content="2021-10-01T12:35:40.000Z">
-<meta property="article:modified_time" content="2021-10-09T14:47:40.025Z">
+<meta property="article:modified_time" content="2021-10-10T03:07:40.465Z">
 <meta property="article:author" content="冯康慧">
 <meta property="article:tag" content="论文阅读">
 <meta name="twitter:card" content="summary">
@@ -45,10 +46,14 @@
 <link rel="stylesheet" href="/css/style.css">
 
   
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
-<meta name="generator" content="Hexo 5.4.0"></head>
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
@@ -284,7 +289,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-%E6%A6%82%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">0.概要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">1. Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Related-Work"><span class="toc-number">3.</span> <span class="toc-text">2. Related Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Proposed-Dataset"><span class="toc-number">4.</span> <span class="toc-text">3. Proposed Dataset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Proposed-Framework"><span class="toc-number">5.</span> <span class="toc-text">4. Proposed Framework</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Overview"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 Overview</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-Search-Module%EF%BC%88SM%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 Search Module（SM）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-Identification-Module%EF%BC%88IM%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 Identification Module（IM）</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-%E6%A6%82%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">0.概要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">1. Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Related-Work"><span class="toc-number">3.</span> <span class="toc-text">2. Related Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Proposed-Dataset"><span class="toc-number">4.</span> <span class="toc-text">3. Proposed Dataset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Proposed-Framework"><span class="toc-number">5.</span> <span class="toc-text">4. Proposed Framework</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Overview"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 Overview</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-Search-Module%EF%BC%88SM%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 Search Module（SM）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-1-Receptive-Field%EF%BC%88RF%EF%BC%89"><span class="toc-number">5.2.1.</span> <span class="toc-text">4.2.1 Receptive Field（RF）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-Identification-Module%EF%BC%88IM%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 Identification Module（IM）</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -330,7 +335,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/10/01/Camouflaged%20object%20detection/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.4k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.5k(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
@@ -372,8 +377,11 @@
 <p>&emsp;&emsp;标注完成之后，从COD10K数据集中的每个子类中总共随机挑选6000张图片作为训练集，4000张图片作为测试集。</p>
 <p><img src="/2021/10/01/Camouflaged%20object%20detection/3_1.jpg" alt="图3.1 来自COD10K数据集的统计和伪装类别示例"></p>
 <p>​                                                                    图3.1 来自COD10K数据集的统计和伪装类别示例</p>
-<h3 id="4-Proposed-Framework"><a href="#4-Proposed-Framework" class="headerlink" title="4. Proposed Framework"></a>4. Proposed Framework</h3><h4 id="4-1-Overview"><a href="#4-1-Overview" class="headerlink" title="4.1 Overview"></a>4.1 Overview</h4><p>&emsp;&emsp;文中提出的SINet框架主要由Search Module（SM）和Identification Module（IM）两个模块组成，</p>
-<h4 id="4-2-Search-Module（SM）"><a href="#4-2-Search-Module（SM）" class="headerlink" title="4.2 Search Module（SM）"></a>4.2 Search Module（SM）</h4><h4 id="4-3-Identification-Module（IM）"><a href="#4-3-Identification-Module（IM）" class="headerlink" title="4.3 Identification Module（IM）"></a>4.3 Identification Module（IM）</h4>
+<h3 id="4-Proposed-Framework"><a href="#4-Proposed-Framework" class="headerlink" title="4. Proposed Framework"></a>4. Proposed Framework</h3><h4 id="4-1-Overview"><a href="#4-1-Overview" class="headerlink" title="4.1 Overview"></a>4.1 Overview</h4><p>&emsp;&emsp;文中提出的SINet框架主要由Search Module（SM）和Identification Module（IM）两个模块组成，其中SM模块负责寻找伪装目标，IM模块主要负责对伪装目标的位置进行精确定位。SINet的框架模型如图4.1所示，其中的具体模块的解释将在一下两个部分介绍。</p>
+<p><img src="/2021/10/01/Camouflaged%20object%20detection/4_1.jpg" alt="图4.1 SINet网络结构"></p>
+<p>图4.1 SINet网络结构</p>
+<h4 id="4-2-Search-Module（SM）"><a href="#4-2-Search-Module（SM）" class="headerlink" title="4.2 Search Module（SM）"></a>4.2 Search Module（SM）</h4><h5 id="4-2-1-Receptive-Field（RF）"><a href="#4-2-1-Receptive-Field（RF）" class="headerlink" title="4.2.1 Receptive Field（RF）"></a>4.2.1 Receptive Field（RF）</h5><p>&emsp;&emsp;感受野（RF）组件包括了五个分支。</p>
+<h4 id="4-3-Identification-Module（IM）"><a href="#4-3-Identification-Module（IM）" class="headerlink" title="4.3 Identification Module（IM）"></a>4.3 Identification Module（IM）</h4>
       
     </div>
     <div class="article-footer">
