@@ -29,8 +29,9 @@
 <meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/3_1.jpg">
 <meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/4_1.jpg">
 <meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/4_2.jpg">
+<meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/4_3.jpg">
 <meta property="article:published_time" content="2021-10-01T12:35:40.000Z">
-<meta property="article:modified_time" content="2021-10-11T02:00:56.588Z">
+<meta property="article:modified_time" content="2021-10-11T02:39:01.364Z">
 <meta property="article:author" content="冯康慧">
 <meta property="article:tag" content="论文阅读">
 <meta name="twitter:card" content="summary">
@@ -290,7 +291,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-%E6%A6%82%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">0.概要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">1. Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Related-Work"><span class="toc-number">3.</span> <span class="toc-text">2. Related Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Proposed-Dataset"><span class="toc-number">4.</span> <span class="toc-text">3. Proposed Dataset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Proposed-Framework"><span class="toc-number">5.</span> <span class="toc-text">4. Proposed Framework</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Overview"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 Overview</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-Search-Module%EF%BC%88SM%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 Search Module（SM）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-1-Receptive-Field%EF%BC%88RF%EF%BC%89"><span class="toc-number">5.2.1.</span> <span class="toc-text">4.2.1 Receptive Field（RF）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-Identification-Module%EF%BC%88IM%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 Identification Module（IM）</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-%E6%A6%82%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">0.概要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">1. Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Related-Work"><span class="toc-number">3.</span> <span class="toc-text">2. Related Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Proposed-Dataset"><span class="toc-number">4.</span> <span class="toc-text">3. Proposed Dataset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Proposed-Framework"><span class="toc-number">5.</span> <span class="toc-text">4. Proposed Framework</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Overview"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 Overview</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-Search-Module%EF%BC%88SM%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 Search Module（SM）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-1-Bconv%EF%BC%88Conv-BN-ReLu%EF%BC%89"><span class="toc-number">5.2.1.</span> <span class="toc-text">4.2.1 Bconv（Conv+BN+ReLu）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-2-Receptive-Field%EF%BC%88RF%EF%BC%89"><span class="toc-number">5.2.2.</span> <span class="toc-text">4.2.2 Receptive Field（RF）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-Identification-Module%EF%BC%88IM%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 Identification Module（IM）</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -336,10 +337,10 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/10/01/Camouflaged%20object%20detection/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.6k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.7k(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 6(分)</span>
 	
 
       </div>
@@ -350,7 +351,10 @@
 <p><a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content_CVPR_2020/html/Fan_Camouflaged_Object_Detection_CVPR_2020_paper.html">论文传送门</a>，<a target="_blank" rel="noopener" href="https://github.com/DengPingFan/SINet">源代码传送门</a>。</p>
 <h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><p>&emsp;&emsp;伪装目标检测大概需要做什么工作或者实现什么效果呢？如图1.1，第一行数据来自于COD10K数据集，第二行就是需要实现的检测效果。可以很清楚的看出，文章做的工作其实就是对于图片中一些边界与背景具有高相似度的物体进行识别或者分割。</p>
 <p><img src="/2021/10/01/Camouflaged%20object%20detection/1_1.jpg" alt="图1.1 部分COK10K数据集中数据（row 1）及模型识别效果（row 2）"></p>
-<p>​                                                    图1.1 部分COK10K数据集中数据（row 1）及模型识别效果（row 2）</p>
+<div align="center">图1.1 部分COK10K数据集中数据（row 1）及模型识别效果（row 2）</div>
+
+
+
 <p>&emsp;&emsp;本文主要贡献：</p>
 <ol>
 <li><p>提出了COD10K数据集，专门用于COD。该数据集包括了10K张图片，目标类别包括78种水生、飞行、两栖动物、地面动物。其中每张图片的伪装目标都分层次地进行了标注，标注内容包括类别（category）、边界框（bounding-box）、对象等级（object-level）和实例等级（instance-level）。</p>
@@ -377,14 +381,28 @@
 <p>&emsp;&emsp;<strong>关于Object和Instance的区分</strong>：作者强调现有的COD数据集主要聚焦在object-level上，然而能够一个对象解析为它的实例对于计算机视觉研究者们是否能够编辑或者理解一个场景来说是至关重要的。因此，作者进一步在实例级（instance-level）上标注了数据集。</p>
 <p>&emsp;&emsp;标注完成之后，从COD10K数据集中的每个子类中总共随机挑选6000张图片作为训练集，4000张图片作为测试集。</p>
 <p><img src="/2021/10/01/Camouflaged%20object%20detection/3_1.jpg" alt="图3.1 来自COD10K数据集的统计和伪装类别示例"></p>
-<p>​                                                                    图3.1 来自COD10K数据集的统计和伪装类别示例</p>
-<h3 id="4-Proposed-Framework"><a href="#4-Proposed-Framework" class="headerlink" title="4. Proposed Framework"></a>4. Proposed Framework</h3><h4 id="4-1-Overview"><a href="#4-1-Overview" class="headerlink" title="4.1 Overview"></a>4.1 Overview</h4><p>&emsp;&emsp;文中提出的SINet框架主要由Search Module（SM）和Identification Module（IM）两个模块组成，其中SM模块负责寻找伪装目标，IM模块主要负责对伪装目标的位置进行精确定位。SINet的框架模型如图4.1所示，其中的具体模块的解释将在一下两个部分介绍。</p>
+<div align="center">图3.1 来自COD10K数据集的统计和伪装类别示例</div>
+
+
+
+<h3 id="4-Proposed-Framework"><a href="#4-Proposed-Framework" class="headerlink" title="4. Proposed Framework"></a>4. Proposed Framework</h3><h4 id="4-1-Overview"><a href="#4-1-Overview" class="headerlink" title="4.1 Overview"></a>4.1 Overview</h4><p>&emsp;&emsp;文中提出的SINet框架主要由<strong>Search Module（SM）</strong>和<strong>Identification Module（IM）</strong>两个模块组成，其中SM模块负责寻找伪装目标，IM模块主要负责对伪装目标的位置进行精确定位。SINet的框架模型如图4.1所示，其中的具体模块的解释将在一下两个部分介绍。</p>
 <p><img src="/2021/10/01/Camouflaged%20object%20detection/4_1.jpg" alt="图4.1 SINet网络结构"></p>
-<p>图4.1 SINet网络结构</p>
-<h4 id="4-2-Search-Module（SM）"><a href="#4-2-Search-Module（SM）" class="headerlink" title="4.2 Search Module（SM）"></a>4.2 Search Module（SM）</h4><h5 id="4-2-1-Receptive-Field（RF）"><a href="#4-2-1-Receptive-Field（RF）" class="headerlink" title="4.2.1 Receptive Field（RF）"></a>4.2.1 Receptive Field（RF）</h5><p>&emsp;&emsp;感受野（RF）组件包括了五个分支，如图4.2。在每个分支的第一个卷积层均有32个尺寸为1*1的卷积核，目的是为了将原图在不改变分辨率的前提下将图像通道减少到32个。并且，前三个分支后紧连着两个卷积层，分别为（2k-1</p>
-<p>$$ f(s) = a +b $$</p>
-<p><img src="/2021/10/01/Camouflaged%20object%20detection/4_2.jpg" alt="图4.2 Receptive Field结构图"></p>
-<p>图4.2 Receptive Field结构图</p>
+<div align="center">图4.1 SINet网络结构</div>
+
+
+
+<h4 id="4-2-Search-Module（SM）"><a href="#4-2-Search-Module（SM）" class="headerlink" title="4.2 Search Module（SM）"></a>4.2 Search Module（SM）</h4><h5 id="4-2-1-Bconv（Conv-BN-ReLu）"><a href="#4-2-1-Bconv（Conv-BN-ReLu）" class="headerlink" title="4.2.1 Bconv（Conv+BN+ReLu）"></a>4.2.1 Bconv（Conv+BN+ReLu）</h5><p>笔者在这里对文中涉及到的Bconv概念做简单介绍，Bconv是由Convolution、Batch Normalization（BN）和ReLu激活函数共同组成的一个卷积层，其中BN通过将数据标准化，能够加速权重参数的收敛。ReLu作为激活函数,其形式如图4.2所示。从图中不难看出，ReLu函数将所有的负值变为0，而所有的正值都不变，这种操作叫做<strong>单侧抑制</strong>。</p>
+<p><img src="/2021/10/01/Camouflaged%20object%20detection/4_2.jpg"></p>
+<div align="center">图4.2 ReLu激活函数</div>
+
+
+
+<h5 id="4-2-2-Receptive-Field（RF）"><a href="#4-2-2-Receptive-Field（RF）" class="headerlink" title="4.2.2 Receptive Field（RF）"></a>4.2.2 Receptive Field（RF）</h5><p>&emsp;&emsp;感受野（RF）组件包括了五个分支，如图4.3。在每个分支的第一个卷积层均有32个尺寸为1*1的卷积核，目的是为了将原图在不改变分辨率的前提下将图像通道减少到32个。并且，前三个分支后紧连着两个卷积层，分别为的</p>
+<p><img src="/2021/10/01/Camouflaged%20object%20detection/4_3.jpg" alt="图4.3 Receptive Field结构图"></p>
+<div align="center">图4.3 Receptive Field结构图</div>
+
+
+
 <h4 id="4-3-Identification-Module（IM）"><a href="#4-3-Identification-Module（IM）" class="headerlink" title="4.3 Identification Module（IM）"></a>4.3 Identification Module（IM）</h4>
       
     </div>
