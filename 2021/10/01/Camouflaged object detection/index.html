@@ -30,8 +30,11 @@
 <meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/4_1.jpg">
 <meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/4_2.jpg">
 <meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/4_3.jpg">
+<meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/5_1.jpg">
+<meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/5_2.jpg">
+<meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/5_3.jpg">
 <meta property="article:published_time" content="2021-10-01T12:35:40.000Z">
-<meta property="article:modified_time" content="2021-10-11T02:39:01.364Z">
+<meta property="article:modified_time" content="2021-10-11T09:17:37.336Z">
 <meta property="article:author" content="冯康慧">
 <meta property="article:tag" content="论文阅读">
 <meta name="twitter:card" content="summary">
@@ -291,7 +294,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-%E6%A6%82%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">0.概要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">1. Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Related-Work"><span class="toc-number">3.</span> <span class="toc-text">2. Related Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Proposed-Dataset"><span class="toc-number">4.</span> <span class="toc-text">3. Proposed Dataset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Proposed-Framework"><span class="toc-number">5.</span> <span class="toc-text">4. Proposed Framework</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Overview"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 Overview</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-Search-Module%EF%BC%88SM%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 Search Module（SM）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-1-Bconv%EF%BC%88Conv-BN-ReLu%EF%BC%89"><span class="toc-number">5.2.1.</span> <span class="toc-text">4.2.1 Bconv（Conv+BN+ReLu）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-2-Receptive-Field%EF%BC%88RF%EF%BC%89"><span class="toc-number">5.2.2.</span> <span class="toc-text">4.2.2 Receptive Field（RF）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-Identification-Module%EF%BC%88IM%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 Identification Module（IM）</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-Summary"><span class="toc-number">1.</span> <span class="toc-text">0. Summary</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">1. Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Related-Work"><span class="toc-number">3.</span> <span class="toc-text">2. Related Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Proposed-Dataset"><span class="toc-number">4.</span> <span class="toc-text">3. Proposed Dataset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Proposed-Framework"><span class="toc-number">5.</span> <span class="toc-text">4. Proposed Framework</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Overview"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 Overview</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-Search-Module%EF%BC%88SM%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 Search Module（SM）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-1-Bconv%EF%BC%88Conv-BN-ReLu%EF%BC%89"><span class="toc-number">5.2.1.</span> <span class="toc-text">4.2.1 Bconv（Conv+BN+ReLu）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-2-Receptive-Field%EF%BC%88RF%EF%BC%89"><span class="toc-number">5.2.2.</span> <span class="toc-text">4.2.2 Receptive Field（RF）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-Identification-Module%EF%BC%88IM%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 Identification Module（IM）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Benchmark-Experiment"><span class="toc-number">6.</span> <span class="toc-text">5. Benchmark Experiment</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-Experimental-Settings"><span class="toc-number">6.1.</span> <span class="toc-text">5.1 Experimental Settings</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-Results-and-Data-Analysis"><span class="toc-number">6.2.</span> <span class="toc-text">5.2 Results and Data Analysis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-Cross-dataset-Generalization"><span class="toc-number">6.3.</span> <span class="toc-text">5.3 Cross-dataset Generalization</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-Qualitative-Analysis"><span class="toc-number">6.4.</span> <span class="toc-text">5.4 Qualitative Analysis</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Potential-Applications"><span class="toc-number">7.</span> <span class="toc-text">6. Potential Applications</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-Conclusion"><span class="toc-number">8.</span> <span class="toc-text">7. Conclusion</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -337,17 +340,17 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/10/01/Camouflaged%20object%20detection/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.7k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.6k(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 6(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h3 id="0-概要"><a href="#0-概要" class="headerlink" title="0.概要"></a>0.概要</h3><p>&emsp;&emsp;伪装目标检测（Camouflaged object detection，COD）旨在对几乎完全融入周围环境的目标进行识别。该问题的主要难点在于：待检测目标与周围背景具有极高的内在相似性。本文为了解决这样一个问题，提出了名为COD10K的伪装目标检测数据集，并针对该数据集，提出了 Search Identification Network (SINet) 网络模型。该网络模型在包括COD10K以及其他测试数据集上与其他最新的目标检测模型做对比实验，实验结果优于其他所有模型。</p>
+        <h3 id="0-Summary"><a href="#0-Summary" class="headerlink" title="0. Summary"></a>0. Summary</h3><p>&emsp;&emsp;伪装目标检测（Camouflaged object detection，COD）旨在对几乎完全融入周围环境的目标进行识别。该问题的主要难点在于：待检测目标与周围背景具有极高的内在相似性。本文为了解决这样一个问题，提出了名为COD10K的伪装目标检测数据集，并针对该数据集，提出了 Search Identification Network (SINet) 网络模型。该网络模型在包括COD10K以及其他测试数据集上与其他最新的目标检测模型做对比实验，实验结果优于其他所有模型。</p>
 <p><a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content_CVPR_2020/html/Fan_Camouflaged_Object_Detection_CVPR_2020_paper.html">论文传送门</a>，<a target="_blank" rel="noopener" href="https://github.com/DengPingFan/SINet">源代码传送门</a>。</p>
 <h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><p>&emsp;&emsp;伪装目标检测大概需要做什么工作或者实现什么效果呢？如图1.1，第一行数据来自于COD10K数据集，第二行就是需要实现的检测效果。可以很清楚的看出，文章做的工作其实就是对于图片中一些边界与背景具有高相似度的物体进行识别或者分割。</p>
 <p><img src="/2021/10/01/Camouflaged%20object%20detection/1_1.jpg" alt="图1.1 部分COK10K数据集中数据（row 1）及模型识别效果（row 2）"></p>
@@ -391,7 +394,7 @@
 
 
 
-<h4 id="4-2-Search-Module（SM）"><a href="#4-2-Search-Module（SM）" class="headerlink" title="4.2 Search Module（SM）"></a>4.2 Search Module（SM）</h4><h5 id="4-2-1-Bconv（Conv-BN-ReLu）"><a href="#4-2-1-Bconv（Conv-BN-ReLu）" class="headerlink" title="4.2.1 Bconv（Conv+BN+ReLu）"></a>4.2.1 Bconv（Conv+BN+ReLu）</h5><p>笔者在这里对文中涉及到的Bconv概念做简单介绍，Bconv是由Convolution、Batch Normalization（BN）和ReLu激活函数共同组成的一个卷积层，其中BN通过将数据标准化，能够加速权重参数的收敛。ReLu作为激活函数,其形式如图4.2所示。从图中不难看出，ReLu函数将所有的负值变为0，而所有的正值都不变，这种操作叫做<strong>单侧抑制</strong>。</p>
+<h4 id="4-2-Search-Module（SM）"><a href="#4-2-Search-Module（SM）" class="headerlink" title="4.2 Search Module（SM）"></a>4.2 Search Module（SM）</h4><h5 id="4-2-1-Bconv（Conv-BN-ReLu）"><a href="#4-2-1-Bconv（Conv-BN-ReLu）" class="headerlink" title="4.2.1 Bconv（Conv+BN+ReLu）"></a>4.2.1 Bconv（Conv+BN+ReLu）</h5><p>&emsp;&emsp;Bconv是由Convolution、Batch Normalization（BN）和ReLu激活函数共同组成的一个卷积层，其中BN通过将数据标准化，能够加速权重参数的收敛。ReLu作为激活函数,其形式如图4.2所示。从图中不难看出，ReLu函数将所有的负值变为0，而所有的正值都不变，这种操作叫做<strong>单侧抑制</strong>。</p>
 <p><img src="/2021/10/01/Camouflaged%20object%20detection/4_2.jpg"></p>
 <div align="center">图4.2 ReLu激活函数</div>
 
@@ -403,7 +406,28 @@
 
 
 
-<h4 id="4-3-Identification-Module（IM）"><a href="#4-3-Identification-Module（IM）" class="headerlink" title="4.3 Identification Module（IM）"></a>4.3 Identification Module（IM）</h4>
+<h4 id="4-3-Identification-Module（IM）"><a href="#4-3-Identification-Module（IM）" class="headerlink" title="4.3 Identification Module（IM）"></a>4.3 Identification Module（IM）</h4><h3 id="5-Benchmark-Experiment"><a href="#5-Benchmark-Experiment" class="headerlink" title="5. Benchmark Experiment"></a>5. Benchmark Experiment</h3><h4 id="5-1-Experimental-Settings"><a href="#5-1-Experimental-Settings" class="headerlink" title="5.1 Experimental Settings"></a>5.1 Experimental Settings</h4><p>&emsp;&emsp;本文中的实验部分训练集采用了CAMO、COD10K和CAMO+COD10K+EXTRA，其中CAMO和COD10K使用数据集中的默认训练集；测试集使用了CHAMELEON数据集和CAMO、COD10K的测试集。关于Baseline方面，由于没有公开可用的基于深度网络的COD模型，所以文中基于以下三个标准选取了12个深度学习baselines：（1）经典模型，（2）最近发表的模型，（3）在某个特定领域达到SOTA表现的模型，例如GOD和SOD。这些选取到的模型都用建议的参数设置进行了训练。</p>
+<h4 id="5-2-Results-and-Data-Analysis"><a href="#5-2-Results-and-Data-Analysis" class="headerlink" title="5.2 Results and Data Analysis"></a>5.2 Results and Data Analysis</h4><p>&emsp;&emsp;SINet以及文中选取的12个模型在CHAMELEON、CAMO-Test、COD10K-Test上的测试结果如图5.1所示，可以很明显的看出，在三个测试数据集上，SINet的表现均优于其他模型。特别地，GOD模型（如FPN）的表现比SOD模型（如CPD、EGNet）要更差一些，表明SOD框架可能更加适用于COD任务。但是，相比于SOD和GOD模型，SINet显著降低了训练时长（比如：SINet训练一小时，而EGNet则需要训练48小时）且还能在所有数据集上达到SOTA的表现，这说明SINet可能是COD问题的一个有希望的解决方法。</p>
+<p><img src="/2021/10/01/Camouflaged%20object%20detection/5_1.jpg" alt="图5.1 不同模型在不同数据集上的定性结果"></p>
+<div align="center">图5.1 不同模型在不同数据集上的定性结果</div>
+
+
+
+<h4 id="5-3-Cross-dataset-Generalization"><a href="#5-3-Cross-dataset-Generalization" class="headerlink" title="5.3 Cross-dataset Generalization"></a>5.3 Cross-dataset Generalization</h4><p>&emsp;&emsp;由于数据集的普遍性和难度在训练或者评估不同算法的时候起着至关重要的作用，因此文中实验部分还采用了Cross-dataset Generalization（跨数据集泛化），其思路是：在一个数据集上训练模型，在其他数据集上进行测试。具体操作为：从CAMO和COD10K两个数据集中随机选取800张图片作为训练集，200张图片作为测试集。为了公平起见，作者在每个数据集上训练SINet直到loss稳定。结果如图5.2所示，其中“Self”是指训练和测试在同一个数据集上，“Mean Others”表示除了自己以外其他的平均分（这里用到的训练集和测试集的设置与图5.1中的设置不同，所以不具有性能可比性）。图上结果表明，COD10K的确是最复杂的，因为该数据集有大量的具有挑战性的伪装目标检测图。</p>
+<p><img src="/2021/10/01/Camouflaged%20object%20detection/5_2.jpg" alt="图5.2 跨数据集泛化的S-measure"></p>
+<div align="center">图5.2 跨数据集泛化的S-measure</div>
+
+
+
+<h4 id="5-4-Qualitative-Analysis"><a href="#5-4-Qualitative-Analysis" class="headerlink" title="5.4 Qualitative Analysis"></a>5.4 Qualitative Analysis</h4><p>如图5.3，为SINet与另外两个baseline算法的定性比较结果。可以看到的是，PFANet虽然能定位伪装目标的位置，但是输出不够精确。EGNet由于使用了边界特征，能够比PFANet更好的定位边界，但是仍然会丢失一些细小的细节，比如第一行中的鱼。对于不确定的边界，遮挡和小物体这些具有挑战性的例子，SINet能通过细节推测出伪装目标的位置，进一步说明了模型的健壮性。</p>
+<p><img src="/2021/10/01/Camouflaged%20object%20detection/5_3.jpg" alt="图5.3 SINet和两个top-performing的baselines在COD10K上的定性分析"></p>
+<div align="center">图5.3 SINet和两个top-performing的baselines在COD10K上的定性分析</div>
+
+
+
+<h3 id="6-Potential-Applications"><a href="#6-Potential-Applications" class="headerlink" title="6. Potential Applications"></a>6. Potential Applications</h3><p>COD潜在的应用场景文中提到了：医学图像分割、搜救引擎。</p>
+<h3 id="7-Conclusion"><a href="#7-Conclusion" class="headerlink" title="7. Conclusion"></a>7. Conclusion</h3><p>本文提出了极具贡献意义的数据集COK10K和COD领域的新baseline——SINet框架。在今后的工作中，作者计划扩展COD10K数据集，提供各种形式的输入，例如RGB-D伪装目标检测(类似于RGB-D显著目标检测等等）。新技术如弱监督学习、Zero-shot Learning、VAE和多尺度主干网络都会探索。</p>
+
       
     </div>
     <div class="article-footer">
