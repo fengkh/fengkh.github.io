@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/5_2.jpg">
 <meta property="og:image" content="http://fengkh.com/2021/10/01/Camouflaged%20object%20detection/5_3.jpg">
 <meta property="article:published_time" content="2021-10-01T12:35:40.000Z">
-<meta property="article:modified_time" content="2021-10-11T09:17:37.336Z">
+<meta property="article:modified_time" content="2021-10-13T06:46:08.449Z">
 <meta property="article:author" content="冯康慧">
 <meta property="article:tag" content="论文阅读">
 <meta name="twitter:card" content="summary">
@@ -338,10 +338,10 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/10/01/Camouflaged%20object%20detection/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.6k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3k(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 11(分)</span>
 	
 
       </div>
@@ -398,13 +398,14 @@
 
 
 
-<h5 id="4-2-2-Receptive-Field（RF）"><a href="#4-2-2-Receptive-Field（RF）" class="headerlink" title="4.2.2 Receptive Field（RF）"></a>4.2.2 Receptive Field（RF）</h5><p>&emsp;&emsp;感受野（RF）组件包括了五个分支，如图4.3。在每个分支的第一个卷积层均有32个尺寸为1*1的卷积核，目的是为了将原图在不改变分辨率的前提下将图像通道减少到32个。并且，前三个分支后紧连着两个卷积层，分别为的</p>
+<h5 id="4-2-2-Receptive-Field（RF）"><a href="#4-2-2-Receptive-Field（RF）" class="headerlink" title="4.2.2 Receptive Field（RF）"></a>4.2.2 Receptive Field（RF）</h5><p>&emsp;&emsp;感受野（RF）组件包括了五个分支，如图4.3。在每个分支的第一个卷积层均有32个尺寸为1*1的卷积核，目的是为了将原图在不改变分辨率的前提下将图像通道减少到32个。并且，前三个分支后紧连着两个卷积层，紧接着前三个分支后都紧跟着不同尺寸的空洞卷积层，然后将卷积后的结果与第四个分支的结果进行连接操作之后使用一个Bconv层进行卷积，最后将第五个分支的结果与卷积之后的结果加起来作为RF模块的输出。</p>
 <p><img src="/2021/10/01/Camouflaged%20object%20detection/4_3.jpg" alt="图4.3 Receptive Field结构图"></p>
 <div align="center">图4.3 Receptive Field结构图</div>
 
-
-
-<h4 id="4-3-Identification-Module（IM）"><a href="#4-3-Identification-Module（IM）" class="headerlink" title="4.3 Identification Module（IM）"></a>4.3 Identification Module（IM）</h4><h3 id="5-Benchmark-Experiment"><a href="#5-Benchmark-Experiment" class="headerlink" title="5. Benchmark Experiment"></a>5. Benchmark Experiment</h3><h4 id="5-1-Experimental-Settings"><a href="#5-1-Experimental-Settings" class="headerlink" title="5.1 Experimental Settings"></a>5.1 Experimental Settings</h4><p>&emsp;&emsp;本文中的实验部分训练集采用了CAMO、COD10K和CAMO+COD10K+EXTRA，其中CAMO和COD10K使用数据集中的默认训练集；测试集使用了CHAMELEON数据集和CAMO、COD10K的测试集。关于Baseline方面，由于没有公开可用的基于深度网络的COD模型，所以文中基于以下三个标准选取了12个深度学习baselines：（1）经典模型，（2）最近发表的模型，（3）在某个特定领域达到SOTA表现的模型，例如GOD和SOD。这些选取到的模型都用建议的参数设置进行了训练。</p>
+<p>&emsp;&emsp;SM模块做的工作主要是通过使用不同层次的特征和RF模块，初步定位图像中伪装目标的位置。也就是论文原文里提到的猎人定位猎物位置的那一步。接下来就要使用IM模块来对伪装目标的轮廓进行识别，即对目标进行精确定位。</p>
+<h4 id="4-3-Identification-Module（IM）"><a href="#4-3-Identification-Module（IM）" class="headerlink" title="4.3 Identification Module（IM）"></a>4.3 Identification Module（IM）</h4><p>&emsp;&emsp;SM（Identification Module）模块的作用对应于文中提到的猎人对目标进行精准定位的部分。在这个部分中提到了两个组件，一个是PDC（Partial Decoder Component），通过阅读论文，笔者认为PDC模块是将SM模块的功能组件进行了集成之后的一个功能模块。首先PDC模块是将RF模块的一些输出通过PDC模块得到一个输出Ccsm。另外一个模块是基于注意力机制提出的SA（Search Attention），SA模块的输入为X2层的特征和PDC组件的输出经过Sigmoid激活函数的结果，联合这两个输入，通过注意力机制消除无关特征的干扰，然后通过RF组件扩大感受野，最终得到另一个输出Ccim。</p>
+<p>&emsp;&emsp;得到上述两个输出Ccsm和Ccim之后，使用交叉熵损失函数对这两个输出结果进行训练，得到最终的训练模型。</p>
+<h3 id="5-Benchmark-Experiment"><a href="#5-Benchmark-Experiment" class="headerlink" title="5. Benchmark Experiment"></a>5. Benchmark Experiment</h3><h4 id="5-1-Experimental-Settings"><a href="#5-1-Experimental-Settings" class="headerlink" title="5.1 Experimental Settings"></a>5.1 Experimental Settings</h4><p>&emsp;&emsp;本文中的实验部分训练集采用了CAMO、COD10K和CAMO+COD10K+EXTRA，其中CAMO和COD10K使用数据集中的默认训练集；测试集使用了CHAMELEON数据集和CAMO、COD10K的测试集。关于Baseline方面，由于没有公开可用的基于深度网络的COD模型，所以文中基于以下三个标准选取了12个深度学习baselines：（1）经典模型，（2）最近发表的模型，（3）在某个特定领域达到SOTA表现的模型，例如GOD和SOD。这些选取到的模型都用建议的参数设置进行了训练。</p>
 <h4 id="5-2-Results-and-Data-Analysis"><a href="#5-2-Results-and-Data-Analysis" class="headerlink" title="5.2 Results and Data Analysis"></a>5.2 Results and Data Analysis</h4><p>&emsp;&emsp;SINet以及文中选取的12个模型在CHAMELEON、CAMO-Test、COD10K-Test上的测试结果如图5.1所示，可以很明显的看出，在三个测试数据集上，SINet的表现均优于其他模型。特别地，GOD模型（如FPN）的表现比SOD模型（如CPD、EGNet）要更差一些，表明SOD框架可能更加适用于COD任务。但是，相比于SOD和GOD模型，SINet显著降低了训练时长（比如：SINet训练一小时，而EGNet则需要训练48小时）且还能在所有数据集上达到SOTA的表现，这说明SINet可能是COD问题的一个有希望的解决方法。</p>
 <p><img src="/2021/10/01/Camouflaged%20object%20detection/5_1.jpg" alt="图5.1 不同模型在不同数据集上的定性结果"></p>
 <div align="center">图5.1 不同模型在不同数据集上的定性结果</div>
@@ -423,7 +424,7 @@
 
 
 
-<h3 id="6-Potential-Applications"><a href="#6-Potential-Applications" class="headerlink" title="6. Potential Applications"></a>6. Potential Applications</h3><p>COD潜在的应用场景文中提到了：医学图像分割、搜救引擎。</p>
+<h3 id="6-Potential-Applications"><a href="#6-Potential-Applications" class="headerlink" title="6. Potential Applications"></a>6. Potential Applications</h3><p>COD潜在的应用场景文中提到了：医学图像分割、野外搜救或者嵌入图搜索引擎。</p>
 <h3 id="7-Conclusion"><a href="#7-Conclusion" class="headerlink" title="7. Conclusion"></a>7. Conclusion</h3><p>本文提出了极具贡献意义的数据集COK10K和COD领域的新baseline——SINet框架。在今后的工作中，作者计划扩展COD10K数据集，提供各种形式的输入，例如RGB-D伪装目标检测(类似于RGB-D显著目标检测等等）。新技术如弱监督学习、Zero-shot Learning、VAE和多尺度主干网络都会探索。</p>
 
       
