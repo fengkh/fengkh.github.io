@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://fengkh.com/2021/11/09/openslide%E5%AE%89%E8%A3%85%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/1_1.jpg">
 <meta property="og:image" content="http://fengkh.com/2021/11/09/openslide%E5%AE%89%E8%A3%85%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/1_2.jpg">
 <meta property="article:published_time" content="2021-11-09T14:29:47.000Z">
-<meta property="article:modified_time" content="2021-11-09T15:11:33.051Z">
+<meta property="article:modified_time" content="2022-03-20T12:42:31.203Z">
 <meta property="article:author" content="冯康慧">
 <meta property="article:tag" content="python包安装踩坑路">
 <meta name="twitter:card" content="summary">
@@ -375,7 +375,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/11/09/openslide%E5%AE%89%E8%A3%85%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 348(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 393(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -409,6 +409,7 @@
 
 
 <p>注意：这里的openslide安装目录并不是上文第二步中提到的解压目录，而是第四步中pip的安装目录。非Anaconda环境的目录在<code>C:\Users\username\AppData\Roaming\Python\Python37\site-packages\openslide</code> 下；Anaconda环境的目录在Anaconda安装目录的<code>.\envs\envirname\Lib\site-packages\openslide</code>。</p>
+<p>更新：这里如果用的是python3.8及以上的版本，以上代码需要更改，因为3.8以上版本的读取路径方式发生了修改。</p>
 </li>
 <li><p>至此，Openslide安装就完成了，import openslide成功！</p>
 <p>备注：如果第六步报错，删掉lowlevel.py里的<code>from . import _convert</code>之后再次尝试import openslide便可成功。</p>
