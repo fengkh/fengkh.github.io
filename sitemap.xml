@@ -58,14 +58,7 @@
   </url>
   
   <url>
-    <loc>http://fengkh.com/links/index.html</loc>
-    
-    <lastmod>2021-09-27</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fengkh.com/categories/index.html</loc>
+    <loc>http://fengkh.com/404.html</loc>
     
     <lastmod>2021-09-27</lastmod>
     
@@ -79,7 +72,14 @@
   </url>
   
   <url>
-    <loc>http://fengkh.com/404.html</loc>
+    <loc>http://fengkh.com/categories/index.html</loc>
+    
+    <lastmod>2021-09-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fengkh.com/links/index.html</loc>
     
     <lastmod>2021-09-27</lastmod>
     
@@ -88,7 +88,7 @@
 
   <url>
     <loc>http://fengkh.com/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -96,21 +96,21 @@
   
   <url>
     <loc>http://fengkh.com/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://fengkh.com/tags/%E5%8A%A8%E6%80%81/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://fengkh.com/tags/python%E5%8C%85%E5%AE%89%E8%A3%85%E8%B8%A9%E5%9D%91%E8%B7%AF/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <lastmod>2022-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
