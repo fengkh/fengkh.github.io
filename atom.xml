@@ -6,7 +6,7 @@
   <link href="http://fengkh.com/atom.xml" rel="self"/>
   
   <link href="http://fengkh.com/"/>
-  <updated>2022-10-10T07:36:19.507Z</updated>
+  <updated>2022-10-10T07:38:37.057Z</updated>
   <id>http://fengkh.com/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Git入门操作</title>
+    <title>Git入门教程</title>
     <link href="http://fengkh.com/2022/10/10/Git/"/>
     <id>http://fengkh.com/2022/10/10/Git/</id>
     <published>2022-10-10T07:34:24.000Z</published>
-    <updated>2022-10-10T07:36:19.507Z</updated>
+    <updated>2022-10-10T07:38:37.057Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="一、基本原理"><a href="#一、基本原理" class="headerlink" title="一、基本原理"></a>一、基本原理</h2><p>教程来源：</p><p><a href="https://www.bilibili.com/video/BV1r3411F7kn?spm_id_from=333.337.search-card.all.click&vd_source=3aa92f173cf789aed74021ca69519fcd">Git工作流和核心原理 | GitHub基本操作 | VS Code里使用Git和关联GitHub_哔哩哔哩_bilibili</a></p><p><img src="/2022/10/10/Git/Untitled.png" alt="Untitled"></p><h2 id="二、使用教程"><a href="#二、使用教程" class="headerlink" title="二、使用教程"></a>二、使用教程</h2><h3 id="本地Git使用命令"><a href="#本地Git使用命令" class="headerlink" title="本地Git使用命令"></a><strong>本地Git使用命令</strong></h3><table><thead><tr><th>git config —global user.name “用户名”</th><th>设置用户名</th></tr></thead><tbody><tr><td>git config —global user.email “邮箱”</td><td>设置邮箱</td></tr><tr><td>git init</td><td>初始化文件夹为git文件工作区</td></tr><tr><td>git status</td><td>查看当前工作区的状态</td></tr></tbody></table><table><thead><tr><th>git add 文件名</th><th>添加文件</th></tr></thead><tbody><tr><td>git commit -m “版本信息”</td><td>提交文件</td></tr><tr><td>git log</td><td>查看往期版本</td></tr><tr><td>git commit -a -m “版本信息“</td><td>光速提交</td></tr><tr><td>touch .gitignore</td><td>创建要忽略的文件夹，即不会被添加到工作区的文件。需要把不提交的文件名写到.gitignore文件里</td></tr></tbody></table><table><thead><tr><th>git branch 分支名</th><th>创建新的分支</th></tr></thead><tbody><tr><td>git checkout 分支名</td><td>切换到指定分支</td></tr><tr><td>git branch -d 分支名</td><td>删除分支</td></tr><tr><td>git checkout -b 分支名</td><td>创建新的分支并切换到新分支</td></tr><tr><td>git merge 分支名</td><td>把分支名的分支合并到当前所处的分支</td></tr></tbody></table><h3 id="Github结合git使用"><a href="#Github结合git使用" class="headerlink" title="Github结合git使用"></a>Github结合git使用</h3><table><thead><tr><th>git clone HTTPS</th><th>从github下载到本地</th></tr></thead><tbody><tr><td>git remote -v</td><td>查看当前本地仓库和哪些远程仓库有联系</td></tr><tr><td>git remote add origin <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#109;">&#103;&#105;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#109;</a>….</td><td>把本地仓库与远程仓库关联</td></tr><tr><td>git push -u origin master</td><td></td></tr><tr><td>git fetch</td><td>拉远程仓库到暂存</td></tr><tr><td>git pull</td><td></td></tr><tr><td>git rm -r -n 文件夹 —cached</td><td>删除远程仓库里的文件夹但不删除本地的，如果不加—cached，本地里的也会删掉。如果不加-n会直接删掉，加了的话会先预览删除的文件。</td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="一、基本原理"><a href="#一、基本原理" class="headerlink" title="一、基本原理"></a>一、基本原理</h2><p>教程来源：</p><p><a href="https://www.bilibili.com/video/BV1r3411F7kn?spm_id_from=333.337.search-card.all.click&vd_source=3aa92f173cf789aed74021ca69519fcd">Git工作流和核心原理 | GitHub基本操作 | VS Code里使用Git和关联GitHub_哔哩哔哩_bilibili</a></p><p><img src="/2022/10/10/Git/Untitled.png" alt="Untitled"></p><h2 id="二、使用教程"><a href="#二、使用教程" class="headerlink" title="二、使用教程"></a>二、使用教程</h2><h3 id="本地Git使用命令"><a href="#本地Git使用命令" class="headerlink" title="本地Git使用命令"></a><strong>本地Git使用命令</strong></h3><table><thead><tr><th>git config —global user.name “用户名”</th><th>设置用户名</th></tr></thead><tbody><tr><td>git config —global user.email “邮箱”</td><td>设置邮箱</td></tr><tr><td>git init</td><td>初始化文件夹为git文件工作区</td></tr><tr><td>git status</td><td>查看当前工作区的状态</td></tr></tbody></table><table><thead><tr><th>git add 文件名</th><th>添加文件</th></tr></thead><tbody><tr><td>git commit -m “版本信息”</td><td>提交文件</td></tr><tr><td>git log</td><td>查看往期版本</td></tr><tr><td>git commit -a -m “版本信息“</td><td>光速提交</td></tr><tr><td>touch .gitignore</td><td>创建要忽略的文件夹，即不会被添加到工作区的文件。需要把不提交的文件名写到.gitignore文件里</td></tr></tbody></table><table><thead><tr><th>git branch 分支名</th><th>创建新的分支</th></tr></thead><tbody><tr><td>git checkout 分支名</td><td>切换到指定分支</td></tr><tr><td>git branch -d 分支名</td><td>删除分支</td></tr><tr><td>git checkout -b 分支名</td><td>创建新的分支并切换到新分支</td></tr><tr><td>git merge 分支名</td><td>把分支名的分支合并到当前所处的分支</td></tr></tbody></table><h3 id="Github结合git使用"><a href="#Github结合git使用" class="headerlink" title="Github结合git使用"></a>Github结合git使用</h3><table><thead><tr><th>git clone HTTPS</th><th>从github下载到本地</th></tr></thead><tbody><tr><td>git remote -v</td><td>查看当前本地仓库和哪些远程仓库有联系</td></tr><tr><td>git remote add origin <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;</a>….</td><td>把本地仓库与远程仓库关联</td></tr><tr><td>git push -u origin master</td><td></td></tr><tr><td>git fetch</td><td>拉远程仓库到暂存</td></tr><tr><td>git pull</td><td></td></tr><tr><td>git rm -r -n 文件夹 —cached</td><td>删除远程仓库里的文件夹但不删除本地的，如果不加—cached，本地里的也会删掉。如果不加-n会直接删掉，加了的话会先预览删除的文件。</td></tr></tbody></table>]]></content>
     
     
     <summary type="html">git和github等仓库管理</summary>
@@ -31,7 +31,7 @@
     
     
     
-    <category term="提高生产力" scheme="http://fengkh.com/tags/%E6%8F%90%E9%AB%98%E7%94%9F%E4%BA%A7%E5%8A%9B/"/>
+    <category term="实用工具" scheme="http://fengkh.com/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
