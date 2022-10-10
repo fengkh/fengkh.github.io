@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fengkh.com/2022/10/10/Git/</loc>
+    
+    <lastmod>2022-10-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fengkh.com/2022/10/10/Pytorch/</loc>
+    
+    <lastmod>2022-10-10</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://fengkh.com/about/index.html</loc>
     
     <lastmod>2022-10-10</lastmod>
@@ -102,7 +116,21 @@
   </url>
   
   <url>
+    <loc>http://fengkh.com/tags/%E6%8F%90%E9%AB%98%E7%94%9F%E4%BA%A7%E5%8A%9B/</loc>
+    <lastmod>2022-10-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://fengkh.com/tags/%E5%8A%A8%E6%80%81/</loc>
+    <lastmod>2022-10-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://fengkh.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
