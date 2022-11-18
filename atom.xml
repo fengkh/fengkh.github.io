@@ -3,11 +3,11 @@
   <title>fengkh</title>
   
   
-  <link href="https://fengkh.github.io/project/atom.xml" rel="self"/>
+  <link href="https://fengkh.com/atom.xml" rel="self"/>
   
-  <link href="https://fengkh.github.io/project/"/>
+  <link href="https://fengkh.com/"/>
   <updated>2022-10-10T07:38:37.057Z</updated>
-  <id>https://fengkh.github.io/project/</id>
+  <id>https://fengkh.com/</id>
   
   <author>
     <name>fengkh</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Git入门教程</title>
-    <link href="https://fengkh.github.io/project/2022/10/10/Git/"/>
-    <id>https://fengkh.github.io/project/2022/10/10/Git/</id>
+    <link href="https://fengkh.com/2022/10/10/Git/"/>
+    <id>https://fengkh.com/2022/10/10/Git/</id>
     <published>2022-10-10T07:34:24.000Z</published>
     <updated>2022-10-10T07:38:37.057Z</updated>
     
@@ -31,14 +31,14 @@
     
     
     
-    <category term="实用工具" scheme="https://fengkh.github.io/project/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    <category term="实用工具" scheme="https://fengkh.com/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>Pytorch入门级深度学习框架搭建</title>
-    <link href="https://fengkh.github.io/project/2022/10/10/Pytorch/"/>
-    <id>https://fengkh.github.io/project/2022/10/10/Pytorch/</id>
+    <link href="https://fengkh.com/2022/10/10/Pytorch/"/>
+    <id>https://fengkh.com/2022/10/10/Pytorch/</id>
     <published>2022-10-10T07:29:43.000Z</published>
     <updated>2022-10-10T07:34:00.408Z</updated>
     
@@ -50,14 +50,14 @@
     
     
     
-    <category term="深度学习" scheme="https://fengkh.github.io/project/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://fengkh.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>labelme安装避坑指南</title>
-    <link href="https://fengkh.github.io/project/2021/11/09/labelme%E5%AE%89%E8%A3%85%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/"/>
-    <id>https://fengkh.github.io/project/2021/11/09/labelme%E5%AE%89%E8%A3%85%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/</id>
+    <link href="https://fengkh.com/2021/11/09/labelme%E5%AE%89%E8%A3%85%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/"/>
+    <id>https://fengkh.com/2021/11/09/labelme%E5%AE%89%E8%A3%85%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/</id>
     <published>2021-11-09T14:30:05.000Z</published>
     <updated>2021-11-10T15:44:48.000Z</updated>
     
@@ -69,14 +69,14 @@
     
     
     
-    <category term="python包安装踩坑路" scheme="https://fengkh.github.io/project/tags/python%E5%8C%85%E5%AE%89%E8%A3%85%E8%B8%A9%E5%9D%91%E8%B7%AF/"/>
+    <category term="python包安装踩坑路" scheme="https://fengkh.com/tags/python%E5%8C%85%E5%AE%89%E8%A3%85%E8%B8%A9%E5%9D%91%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title>openslide安装避坑指南</title>
-    <link href="https://fengkh.github.io/project/2021/11/09/openslide%E5%AE%89%E8%A3%85%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/"/>
-    <id>https://fengkh.github.io/project/2021/11/09/openslide%E5%AE%89%E8%A3%85%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/</id>
+    <link href="https://fengkh.com/2021/11/09/openslide%E5%AE%89%E8%A3%85%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/"/>
+    <id>https://fengkh.com/2021/11/09/openslide%E5%AE%89%E8%A3%85%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/</id>
     <published>2021-11-09T14:29:47.000Z</published>
     <updated>2022-03-20T12:42:32.000Z</updated>
     
@@ -88,14 +88,14 @@
     
     
     
-    <category term="python包安装踩坑路" scheme="https://fengkh.github.io/project/tags/python%E5%8C%85%E5%AE%89%E8%A3%85%E8%B8%A9%E5%9D%91%E8%B7%AF/"/>
+    <category term="python包安装踩坑路" scheme="https://fengkh.com/tags/python%E5%8C%85%E5%AE%89%E8%A3%85%E8%B8%A9%E5%9D%91%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title>Object Detection:A survey</title>
-    <link href="https://fengkh.github.io/project/2021/10/16/Object-Detection-A-survey/"/>
-    <id>https://fengkh.github.io/project/2021/10/16/Object-Detection-A-survey/</id>
+    <link href="https://fengkh.com/2021/10/16/Object-Detection-A-survey/"/>
+    <id>https://fengkh.com/2021/10/16/Object-Detection-A-survey/</id>
     <published>2021-10-16T15:25:30.000Z</published>
     <updated>2021-11-09T15:12:18.000Z</updated>
     
@@ -107,14 +107,14 @@
     
     
     
-    <category term="论文阅读" scheme="https://fengkh.github.io/project/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    <category term="论文阅读" scheme="https://fengkh.com/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>Camouflaged Object Detection 阅读笔记</title>
-    <link href="https://fengkh.github.io/project/2021/10/01/Camouflaged%20object%20detection/"/>
-    <id>https://fengkh.github.io/project/2021/10/01/Camouflaged%20object%20detection/</id>
+    <link href="https://fengkh.com/2021/10/01/Camouflaged%20object%20detection/"/>
+    <id>https://fengkh.com/2021/10/01/Camouflaged%20object%20detection/</id>
     <published>2021-10-01T12:35:40.000Z</published>
     <updated>2021-10-13T06:46:10.000Z</updated>
     
@@ -126,14 +126,14 @@
     
     
     
-    <category term="论文阅读" scheme="https://fengkh.github.io/project/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    <category term="论文阅读" scheme="https://fengkh.com/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://fengkh.github.io/project/2021/09/27/Hello%20World/"/>
-    <id>https://fengkh.github.io/project/2021/09/27/Hello%20World/</id>
+    <link href="https://fengkh.com/2021/09/27/Hello%20World/"/>
+    <id>https://fengkh.com/2021/09/27/Hello%20World/</id>
     <published>2021-09-27T02:54:54.000Z</published>
     <updated>2021-10-01T14:14:42.000Z</updated>
     
@@ -145,7 +145,7 @@
     
     
     
-    <category term="动态" scheme="https://fengkh.github.io/project/tags/%E5%8A%A8%E6%80%81/"/>
+    <category term="动态" scheme="https://fengkh.com/tags/%E5%8A%A8%E6%80%81/"/>
     
   </entry>
   
