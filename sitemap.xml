@@ -83,6 +83,33 @@
   </url>
   
   <url>
+    <loc>https://fen9kh.github.io/personal/about/index.html</loc>
+    
+    <lastmod>2023-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fen9kh.github.io/personal/bb/index.html</loc>
+    
+    <lastmod>2023-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fen9kh.github.io/personal/love/index.html</loc>
+    
+    <lastmod>2023-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://fen9kh.github.io/site/census/index.html</loc>
     
     <lastmod>2023-03-01</lastmod>
@@ -111,33 +138,6 @@
   
   <url>
     <loc>https://fen9kh.github.io/social/link/index.html</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fen9kh.github.io/personal/about/index.html</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fen9kh.github.io/personal/bb/index.html</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fen9kh.github.io/personal/love/index.html</loc>
     
     <lastmod>2023-03-01</lastmod>
     
