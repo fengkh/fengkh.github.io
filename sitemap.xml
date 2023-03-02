@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fengkh.github.io/personal/about/index.html</loc>
+    
+    <lastmod>2023-03-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fengkh.github.io/site/time/index.html</loc>
+    
+    <lastmod>2023-03-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://fengkh.github.io/posts/6d212f87.html</loc>
     
     <lastmod>2023-03-02</lastmod>
@@ -65,24 +83,6 @@
   </url>
   
   <url>
-    <loc>https://fengkh.github.io/site/time/index.html</loc>
-    
-    <lastmod>2023-03-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fengkh.github.io/personal/bb/index.html</loc>
-    
-    <lastmod>2023-03-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fengkh.github.io/posts/4a17b156.html</loc>
     
     <lastmod>2023-03-01</lastmod>
@@ -93,15 +93,6 @@
   
   <url>
     <loc>https://fengkh.github.io/manifest.json</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fengkh.github.io/personal/about/index.html</loc>
     
     <lastmod>2023-03-01</lastmod>
     
@@ -122,51 +113,6 @@
     <loc>https://fengkh.github.io/tags/index.html</loc>
     
     <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fengkh.github.io/personal/love/index.html</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fengkh.github.io/site/census/index.html</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fengkh.github.io/social/fcircle/index.html</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fengkh.github.io/social/link/index.html</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fengkh.github.io/site/echarts/index.html</loc>
-    
-    <lastmod>2022-09-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
