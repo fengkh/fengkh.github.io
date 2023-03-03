@@ -29,6 +29,31 @@
     
     
     <entry>
+      <title>einsum用法与理解</title>
+      <link href="/posts/c1c48943.html"/>
+      <url>/posts/c1c48943.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-简介">1. 简介</h3><p>爱因斯坦求和约定（einsum）提供了一套既简洁又优雅的规则，可实现包括但不限于：向量内积，向量外积，矩阵乘法，转置和张量收缩等张量操作，熟练运用 einsum 可以很方便的实现复杂的张量操作，而且不容易出错。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Coding </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>A survey of modern Deep learning based Object Detection Models</title>
       <link href="/posts/324ed694.html"/>
       <url>/posts/324ed694.html</url>
