@@ -6,7 +6,7 @@
   <link href="https://fengkh.github.io/atom.xml" rel="self"/>
   
   <link href="https://fengkh.github.io/"/>
-  <updated>2023-03-02T06:28:19.120Z</updated>
+  <updated>2023-03-03T03:22:33.089Z</updated>
   <id>https://fengkh.github.io/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>einsum用法与理解</title>
+    <link href="https://fengkh.github.io/posts/c1c48943.html"/>
+    <id>https://fengkh.github.io/posts/c1c48943.html</id>
+    <published>2023-03-03T03:09:38.000Z</published>
+    <updated>2023-03-03T03:22:33.089Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-Einsum的数学含义">1. Einsum的数学含义</h3>]]></content>
+    
+    
+    <summary type="html">关于爱因斯坦求和算法在torch.einsum包中实现的理解与实际内部运算解析</summary>
+    
+    
+    
+    <category term="Coding" scheme="https://fengkh.github.io/categories/Coding/"/>
+    
+    
+    <category term="深度学习" scheme="https://fengkh.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>einsum用法与理解</title>
+    <link href="https://fengkh.github.io/posts/c1c48943.html"/>
+    <id>https://fengkh.github.io/posts/c1c48943.html</id>
+    <published>2023-03-03T03:09:38.000Z</published>
+    <updated>2023-03-03T03:23:06.879Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-Einsum的数学含义">1. Einsum的数学含义</h3>]]></content>
+    
+    
+    <summary type="html">关于爱因斯坦求和算法在torch.einsum包中实现的理解与实际内部运算解析</summary>
+    
+    
+    
+    <category term="Coding" scheme="https://fengkh.github.io/categories/Coding/"/>
+    
+    
+    <category term="深度学习" scheme="https://fengkh.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>A survey of modern Deep learning based Object Detection Models</title>
