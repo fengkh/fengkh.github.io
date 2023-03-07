@@ -22,6 +22,8 @@
             
             <tag> 深度学习 </tag>
             
+            <tag> Pytorch </tag>
+            
         </tags>
       
     </entry>
@@ -38,12 +40,14 @@
       
       <categories>
           
-          <category> Reading papers </category>
+          <category> Papers </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> 深度学习 </tag>
             
             <tag> 论文阅读 </tag>
             
@@ -63,7 +67,7 @@
       
       <categories>
           
-          <category> Git </category>
+          <category> Coding </category>
           
       </categories>
       
@@ -71,6 +75,8 @@
         <tags>
             
             <tag> 实用工具 </tag>
+            
+            <tag> Git </tag>
             
         </tags>
       
@@ -97,6 +103,8 @@
             
             <tag> 深度学习 </tag>
             
+            <tag> Pytorch </tag>
+            
         </tags>
       
     </entry>
@@ -113,14 +121,14 @@
       
       <categories>
           
-          <category> Python </category>
+          <category> Coding </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> python包安装踩坑路 </tag>
+            <tag> Python packages </tag>
             
         </tags>
       
@@ -138,14 +146,14 @@
       
       <categories>
           
-          <category> Python </category>
+          <category> Coding </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> python包安装踩坑路 </tag>
+            <tag> Python packages </tag>
             
         </tags>
       
@@ -163,12 +171,14 @@
       
       <categories>
           
-          <category> Reading papers </category>
+          <category> Papers </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> 深度学习 </tag>
             
             <tag> 论文阅读 </tag>
             
