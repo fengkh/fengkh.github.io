@@ -6,7 +6,7 @@
   <link href="https://fengkh.github.io/atom.xml" rel="self"/>
   
   <link href="https://fengkh.github.io/"/>
-  <updated>2023-03-08T13:57:29.765Z</updated>
+  <updated>2023-03-09T03:13:14.641Z</updated>
   <id>https://fengkh.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新冠感染及痊愈日记</title>
+    <link href="https://fengkh.github.io/posts/e28b8d84.html"/>
+    <id>https://fengkh.github.io/posts/e28b8d84.html</id>
+    <published>2023-03-09T03:10:36.000Z</published>
+    <updated>2023-03-09T03:13:14.641Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="第一天-2022-12-12"><strong>第一天 2022.12.12</strong></h3><p>其实第一天并没有什么特别的感觉，就只是有一点嗓子痛，疼痛程度甚至不及一般的扁桃体发炎带来的痛感，又加之当晚去全家买了“海氏海诺”牌的电子体温计，自测的温度从来都没上过37度。所以我就以为就是普通的扁桃体发炎，更甚着大不了就是得了流行性感冒。</p><h3 id="第二天-2022-12-13"><strong>第二天 2022.12.13</strong></h3><p>这天上午不知道为什么变得特别困，根本睡不醒，早上九点过就起来了，然后因为一系列原因，继续睡到了12点，这时间起来的时候我又测了一次体温，电子体温计显示的是35.8，我就放心的出门了，其实在出门的时候，我女朋友就已经感觉我脸有点轻微发烫了，但是我们还是选择了相信体温计。</p><p>中午在中快餐厅打完饭之后，我自己带到了实验室吃，我女朋友拿回家吃的，我吃完之后大概一点，然后就想着休息会就开始工作，大概过了半个小时，我就觉得脸部特别烫，一摸额头也发烧了，我就知道我大概率中招了，我就立刻赶到校医院发热门诊进行就诊。在经过两个小时的排队等候之后，我就得到了一盒“氨麻美敏片”，医生就叫我回家去休息。其实我这个时候的发烧已经非常严重了，我在等候的时候，自己测了好几次体温（这时候是从实验室拿的水银温度计了），一次比一次高，最高的甚至到了38.9。</p><p>晚上八点我吃了一粒布洛芬，然后在实验室开始长达10个小时的痛苦折磨。吃完药之后，我的体温并没有立刻得到控制，温度还是在慢慢上升，八点半的时候我女朋友买的自测试剂盒到了，我阳性，她阴性。我让她自己回家，我选择在实验室进行隔离，因为她还有11天就要考研了，我不想因为我传染给她新冠导致影响考研的发挥。这时候我就一个人在实验室呆着了，女朋友给我拿来了生活用品，但基本我没怎么用，因为我轻微一动，整个脑子就像要裂开了一样的疼痛，我只敢躺着一动不动。</p><p>在晚上22点20分之后，我开始试图睡觉，很快就睡着了，但是由于在躺椅上睡的，本身并不是很舒服，又加之一直在发烧，我凌晨1点半的时候就醒来了，我又测了一次温度，36.9。我以为我已经退烧了，症状的到了好转，就起来接了杯水喝下了，可能是因为动了，脑子又开始剧痛难忍，再一次睡觉了之后，六点钟就醒了。我测了一次体温，还是38.3。还是处于发烧期，我准备七点的时候吃一粒布洛芬，然后看看发烧能否缓解。</p><hr><h4 id="2023年三月五日更新：">2023年三月五日更新：</h4><p>突然想起来这个还没写完，大概后面就是几天就转阴了，但是断断续续肺炎了一个多月，又是输液又是吃药，还蛮难受的。</p><p>最近我们这里又在传说什么甲流，哈人！！！！带好口罩吧~</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;第一天-2022-12-12&quot;&gt;&lt;strong&gt;第一天 2022.12.12&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;其实第一天并没有什么特别的感觉，就只是有一点嗓子痛，疼痛程度甚至不及一般的扁桃体发炎带来的痛感，又加之当晚去全家买了“海氏海诺”牌的电子体温计，自测的温</summary>
+      
+    
+    
+    
+    <category term="Life" scheme="https://fengkh.github.io/categories/Life/"/>
+    
+    
+    <category term="动态" scheme="https://fengkh.github.io/tags/%E5%8A%A8%E6%80%81/"/>
+    
+    <category term="Health" scheme="https://fengkh.github.io/tags/Health/"/>
+    
+  </entry>
   
   <entry>
     <title>深入理解Faster RCNN</title>
@@ -90,7 +117,7 @@
     <link href="https://fengkh.github.io/posts/29207ea7.html"/>
     <id>https://fengkh.github.io/posts/29207ea7.html</id>
     <published>2022-10-10T07:34:24.000Z</published>
-    <updated>2023-03-08T11:37:57.962Z</updated>
+    <updated>2023-03-09T03:09:58.186Z</updated>
     
     <content type="html"><![CDATA[<h1>Git</h1><h2 id="一、基本原理">一、基本原理</h2><p>教程来源：</p><p><a href="https://www.bilibili.com/video/BV1r3411F7kn?spm_id_from=333.337.search-card.all.click&amp;vd_source=3aa92f173cf789aed74021ca69519fcd">Git工作流和核心原理 | GitHub基本操作 | VS Code里使用Git和关联GitHub_哔哩哔哩_bilibili</a></p><center><img src='https://imagebed-2jk.pages.dev/img/Git_Untitled.png' width='80%'></center><h2 id="二、使用教程">二、使用教程</h2><h3 id="本地Git使用命令"><strong>本地Git使用命令</strong></h3><table><thead><tr><th>git config —global <a href="http://user.name">user.name</a> “用户名”</th><th>设置用户名</th></tr></thead><tbody><tr><td>git config —global user.email “邮箱”</td><td>设置邮箱</td></tr><tr><td>git init</td><td>初始化文件夹为git文件工作区</td></tr><tr><td>git status</td><td>查看当前工作区的状态</td></tr></tbody></table><table><thead><tr><th>git add 文件名</th><th>添加文件</th></tr></thead><tbody><tr><td>git commit -m “版本信息”</td><td>提交文件</td></tr><tr><td>git log</td><td>查看往期版本</td></tr><tr><td>git commit -a -m “版本信息“</td><td>光速提交</td></tr><tr><td>touch .gitignore</td><td>创建要忽略的文件夹，即不会被添加到工作区的文件。需要把不提交的文件名写到.gitignore文件里</td></tr></tbody></table><table><thead><tr><th>git branch 分支名</th><th>创建新的分支</th></tr></thead><tbody><tr><td>git checkout 分支名</td><td>切换到指定分支</td></tr><tr><td>git branch -d 分支名</td><td>删除分支</td></tr><tr><td>git checkout -b 分支名</td><td>创建新的分支并切换到新分支</td></tr><tr><td>git merge 分支名</td><td>把分支名的分支合并到当前所处的分支</td></tr></tbody></table><h3 id="Github结合git使用">Github结合git使用</h3><table><thead><tr><th>git clone HTTPS</th><th>从github下载到本地</th></tr></thead><tbody><tr><td>git remote -v</td><td>查看当前本地仓库和哪些远程仓库有联系</td></tr><tr><td>git remote add origin <a href="mailto:git@github.com">git@github.com</a>….</td><td>把本地仓库与远程仓库关联</td></tr><tr><td>git push -u origin master</td><td></td></tr><tr><td>git fetch</td><td>拉远程仓库到暂存</td></tr><tr><td>git pull</td><td></td></tr><tr><td>git rm -r -n 文件夹 —cached</td><td>删除远程仓库里的文件夹但不删除本地的，如果不加—cached，本地里的也会删掉。如果不加-n会直接删掉，加了的话会先预览删除的文件。</td></tr></tbody></table>]]></content>
     
@@ -99,7 +126,7 @@
     
     
     
-    <category term="Coding" scheme="https://fengkh.github.io/categories/Coding/"/>
+    <category term="Environments" scheme="https://fengkh.github.io/categories/Environments/"/>
     
     
     <category term="实用工具" scheme="https://fengkh.github.io/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
@@ -136,7 +163,7 @@
     <link href="https://fengkh.github.io/posts/b8ce5541.html"/>
     <id>https://fengkh.github.io/posts/b8ce5541.html</id>
     <published>2021-11-09T14:30:05.000Z</published>
-    <updated>2023-03-08T11:39:04.139Z</updated>
+    <updated>2023-03-09T03:09:29.997Z</updated>
     
     <content type="html"><![CDATA[<h3 id="一、Anaconda安装">一、Anaconda安装</h3><ol><li><p>Anaconda<a href="https://www.anaconda.com/products/individual">下载</a>对应电脑版本的，windows10系统的直接点这个就可以下载</p><img src="https://imagebed-2jk.pages.dev/img/labelme安装避坑指南_1_1.png" width = "80%"></li><li><p>下载完成之后运行安装程序，按照如下步骤点击安装。（大概需要2.6G空间，安装路径默认就好）</p><p>依次点击：</p><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Next</span><span class="operator">&gt;</span>  </span><br><span class="line"></span><br><span class="line"><span class="built_in">I</span> <span class="variable">Agree</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">All</span> <span class="variable">Users</span>  <span class="built_in">Next</span><span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Next</span><span class="operator">&gt;</span></span><br><span class="line">这里出现两个勾选项，全部勾上  <span class="built_in">Install</span></span><br><span class="line"></span><br><span class="line">然后安装完成之后的<span class="variable">Finish</span>界面两个勾选项取消掉，然后单击<span class="variable">Finish</span></span><br></pre></td></tr></table></figure></li><li><p>到这里，Anaconda安装完成，开始写环境变量，在左下角的搜索栏搜索“环境变量”并打开</p><img src="https://imagebed-2jk.pages.dev/img/labelme安装避坑指南_1_2.png" width = "50%"></li></ol><img src="https://imagebed-2jk.pages.dev/img/labelme安装避坑指南_1_3.png" width = "45%"><p>点击“环境变量”，找到如下图所示的系统变量Path并双击打开</p><img src="https://imagebed-2jk.pages.dev/img/labelme安装避坑指南_1_4.png" width = "45%"><p>再点击新建，如下图内容输入下面的内容<code>C:\ProgramData\Anaconda3\Scripts</code>点击确定，这里就配置好了</p><img src="https://imagebed-2jk.pages.dev/img/labelme安装避坑指南_1_5.png" width = "45%"><h3 id="二、创建虚拟环境并安装Labelme">二、创建虚拟环境并安装Labelme</h3><ol><li>进入命令行，输入conda检查Anaconda是否安装成功，出现如下界面表示正确，进行下一步，否则重新安装Anaconda。</li></ol><img src='https://imagebed-2jk.pages.dev/img/labelme安装避坑指南_2_1.png' width='80%'><ol start="2"><li><p>输入<code>conda create -n labelme python=3.6</code>并回车，这里提示[y/n]，输入y然后回车。</p></li><li><p>依次输入如下命令，完成labelme安装：</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda activate labelme</span><br><span class="line"></span><br><span class="line">pip <span class="keyword">install</span> pyqt5</span><br><span class="line"></span><br><span class="line">pip <span class="keyword">install</span> labelme</span><br><span class="line"></span><br></pre></td></tr></table></figure></li><li><p>至此，Labelme安装完成，如需使用按照如下步骤：</p><p>（1）Win+R 输入cmd打开命令行窗口；</p><p>（2）输入<code>conda activate labelme</code>；</p><p>（3）输入<code>labelme</code>；</p></li></ol><h3 id="三、json转换数据集">三、json转换数据集</h3><p>以上步骤能完成Labelme的安装和使用，如需转换json文件为数据集，还需要注意避如下坑：</p><ol><li><p>首先，labelme标准安装版本一次只能转换一个json文件，如果需要批量转换，需要参考其他操作。</p></li><li><p>转换的操作如下：</p><p>（1）进入到<code>.\Anaconda3\envs\labelme\Lib\site-packages\labelme\cli</code>目录下;</p><p>（2）在该目录进入cmd命令行；</p><p>（3）输入<code>labelme_json_to_dataset.exe &lt;你的json文件路径&gt;</code>；</p></li><li><p>某些版本的labelme可能会导致转换之后的文件缺少info.yaml文件，需要做如下修改：</p><p>（1）进入如下目录：<code>.\Anaconda3\envs\py36_labelme\Lib\site-packages\labelme\cli</code>，找到名为json_to_dataset.py文件；</p><p>（2）在json_to_dataset.py中添加如下内容：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    PIL.Image.fromarray(img).save(osp.join(out_dir, <span class="string">&#x27;img.png&#x27;</span>))</span><br><span class="line">    utils.lblsave(osp.join(out_dir, <span class="string">&#x27;label.png&#x27;</span>), lbl)</span><br><span class="line">    PIL.Image.fromarray(lbl_viz).save(osp.join(out_dir, <span class="string">&#x27;label_viz.png&#x27;</span>))</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(osp.join(out_dir, <span class="string">&#x27;label_names.txt&#x27;</span>), <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> lbl_name <span class="keyword">in</span> label_names:</span><br><span class="line">            f.write(lbl_name + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="comment"># 缺少的部分，需要添加</span></span><br><span class="line">    logger.warning(<span class="string">&#x27;info.yaml is being replaced by label_names.txt&#x27;</span>)</span><br><span class="line">    info = <span class="built_in">dict</span>(label_names=label_names)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(osp.join(out_dir, <span class="string">&#x27;info.yaml&#x27;</span>), <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        yaml.safe_dump(info, f, default_flow_style=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">logger.info(<span class="string">&#x27;Saved to: &#123;&#125;&#x27;</span>.<span class="built_in">format</span>(out_dir))</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure><p>（3）重新按照2中操作转换json文件即可；</p></li></ol>]]></content>
     
@@ -145,7 +172,7 @@
     
     
     
-    <category term="Coding" scheme="https://fengkh.github.io/categories/Coding/"/>
+    <category term="Environments" scheme="https://fengkh.github.io/categories/Environments/"/>
     
     
     <category term="Python packages" scheme="https://fengkh.github.io/tags/Python-packages/"/>
@@ -157,7 +184,7 @@
     <link href="https://fengkh.github.io/posts/8f5ba4dd.html"/>
     <id>https://fengkh.github.io/posts/8f5ba4dd.html</id>
     <published>2021-11-09T14:29:47.000Z</published>
-    <updated>2023-03-08T11:07:39.339Z</updated>
+    <updated>2023-03-09T03:09:39.646Z</updated>
     
     <content type="html"><![CDATA[<h3 id="一、Openslide简介">一、Openslide简介</h3><ol><li><p>Openslide是一个python的包。</p></li><li><p>Openslide包是用来打开并处理医学图片的，类似.ndpi或者.mrxs这种全扫描片，目前都是通过openslide来进行处理的。</p></li></ol><h3 id="二、openslide安装">二、openslide安装</h3><ol><li><p>不能直接pip，要先下载<a href="https://openslide.org/download/">二进制文件</a>；</p><img src='https://imagebed-2jk.pages.dev/img/openslide安装避坑指南_1_1.jpg' width='70%'></li><li><p>把下载好的二进制文件解压到自己喜欢的目录（如果是Anaconda环境，需要解压到Anaconda的Library目录下）；</p></li><li><p>然后配置环境变量，在系统变量Path里新建如下两个路径；</p><img src='https://imagebed-2jk.pages.dev/img/openslide安装避坑指南_1_2.jpg' width='40%'><p>比如解压在D盘的根目录下，则新建的路径如下：</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">D</span>:\openslide-win64-<span class="number">20171122</span>\openslide-win64-<span class="number">20171122</span>\bin</span><br><span class="line"><span class="attribute">D</span>:\openslide-win64-<span class="number">20171122</span>\openslide-win64-<span class="number">20171122</span>\lib</span><br></pre></td></tr></table></figure></li><li><p>Pip安装Openslide包，直接使用以下指令</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install openslide-python</span><br></pre></td></tr></table></figure></li><li><p>这里我们需要到openslide的安装目录下，修改名为lowlevel.py的文件，添加如下代码：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.environ[<span class="string">&#x27;PATH&#x27;</span>] = <span class="string">&quot;#这里为openslide安装目录的bin目录&quot;</span> + <span class="string">&quot;;&quot;</span> + os.environ[<span class="string">&#x27;PATH&#x27;</span>]</span><br></pre></td></tr></table></figure><p>注意：这里的openslide安装目录并不是上文第二步中提到的解压目录，而是第四步中pip的安装目录。非Anaconda环境的目录在<code>C:\Users\username\AppData\Roaming\Python\Python37\site-packages\openslide</code> 下；Anaconda环境的目录在Anaconda安装目录的<code>.\envs\envirname\Lib\site-packages\openslide</code>。</p><p>更新：这里如果用的是python3.8及以上的版本，以上代码需要更改，因为3.8以上版本的读取路径方式发生了修改。</p></li><li><p>至此，Openslide安装就完成了，import openslide成功！</p><p>备注：如果第六步报错，删掉lowlevel.py里的<code>from . import _convert</code>之后再次尝试import openslide便可成功。</p></li></ol>]]></content>
     
@@ -166,7 +193,7 @@
     
     
     
-    <category term="Coding" scheme="https://fengkh.github.io/categories/Coding/"/>
+    <category term="Environments" scheme="https://fengkh.github.io/categories/Environments/"/>
     
     
     <category term="Python packages" scheme="https://fengkh.github.io/tags/Python-packages/"/>

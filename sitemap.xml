@@ -2,18 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://fengkh.github.io/posts/451f615a.html</loc>
+    <loc>https://fengkh.github.io/posts/e28b8d84.html</loc>
     
-    <lastmod>2023-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fengkh.github.io/posts/b8ce5541.html</loc>
-    
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -22,7 +13,7 @@
   <url>
     <loc>https://fengkh.github.io/posts/29207ea7.html</loc>
     
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -30,6 +21,24 @@
   
   <url>
     <loc>https://fengkh.github.io/posts/8f5ba4dd.html</loc>
+    
+    <lastmod>2023-03-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fengkh.github.io/posts/b8ce5541.html</loc>
+    
+    <lastmod>2023-03-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fengkh.github.io/posts/451f615a.html</loc>
     
     <lastmod>2023-03-08</lastmod>
     
@@ -203,6 +212,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://fengkh.github.io/tags/Health/</loc>
+    <lastmod>2023-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -221,6 +237,13 @@
   
   <url>
     <loc>https://fengkh.github.io/categories/Life/</loc>
+    <lastmod>2023-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fengkh.github.io/categories/Environments/</loc>
     <lastmod>2023-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
