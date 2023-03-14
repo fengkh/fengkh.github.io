@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://fengkh.github.io/personal/about/index.html</loc>
+    <loc>https://fengkh.github.io/posts/34701718.html</loc>
     
     <lastmod>2023-03-14</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>https://fengkh.github.io/posts/34701718.html</loc>
+    <loc>https://fengkh.github.io/personal/about/index.html</loc>
     
-    <lastmod>2023-03-13</lastmod>
+    <lastmod>2023-03-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
