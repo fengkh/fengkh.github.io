@@ -1,0 +1,20 @@
+extends includes/layout.pug
+
+block content
+  if theme.category_ui == 'index'
+    include ./includes/mixins/post-ui.pug
+    #recent-posts.recent-posts.category_ui
+      // #categories-chart(data-parent="true" style="height: 300px; padding: 10px;")
+      +postUI
+      include includes/pagination.pug
+      // #categories-chart(data-parent="true" style="height: 300px; padding: 10px;")
+  else
+
+    include ./includes/mixins/article-sort.pug
+
+    #category
+
+      .article-sort-title= _p('page.category') + ' - ' + page.category
+      +articleSort(page.posts)
+      include includes/pagination.pug
+
