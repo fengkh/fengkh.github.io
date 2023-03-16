@@ -10,10 +10,15 @@ sidebar: custom
 
 <div id="gitZone"></div>
 
+---
+
+### 2. Code
+<img src="https://wakatime.com/share/@fa6647ff-156c-4c36-95cd-cb90f347ed39/653ad928-5538-451b-9611-947d786e23af.svg"  height = "70%" width = "70%" >
+
 
 ---
 
-### 2. Personal Info
+### 3. Personal Info
 
 ```python
 class Info:
