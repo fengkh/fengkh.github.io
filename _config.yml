@@ -186,29 +186,26 @@ magnet:
     index: 0
   temple_html: '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet">${temple_html_item}</div></div>'
   plus_style: ""
-# categoryBar:
-#   enable: false # 开关
-#   priority: 5 #过滤器优先权
-#   enable_page: / # 应用页面
-#   layout: # 挂载容器类型
-#     type: id
-#     name: recent-posts
-#     index: 0
-#   column: odd # odd：3列 | even：4列
-#   row: 1 #显示行数，默认两行，超过行数切换为滚动显示
-#   message:
-#     - descr: Coding
-#       cover: /assets/cover.jpg
-#
-#     - descr: Python
-#       cover: /assets/cover.jpg
-#
-#     - descr: Reading papers
-#       cover: /assets/cover.jpg
-#
-#     - descr: Git
-#       cover: /assets/cover.jpg
-#
-#     - descr: Life
-#       cover: /assets/cover.jpg
-#   custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
+categoryBar:
+  enable: true # 开关
+  priority: 5 #过滤器优先权
+  enable_page: / # 应用页面
+  layout: # 挂载容器类型
+    type: id
+    name: recent-posts
+    index: 0
+  column: even # odd：3列 | even：4列
+  row: 1 #显示行数，默认两行，超过行数切换为滚动显示
+  message:
+    - descr: Coding
+      cover: /assets/cover.jpg
+
+    - descr: Papers
+      cover: /assets/cover.jpg
+
+    - descr: Life
+      cover: /assets/cover.jpg
+
+    - descr: Environments
+      cover: /assets/cover.jpg
+  custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
