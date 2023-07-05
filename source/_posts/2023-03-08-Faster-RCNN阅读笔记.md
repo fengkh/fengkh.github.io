@@ -7,7 +7,7 @@ categories:
   - Papers
 mathjax: true
 swiper_index: 5
-description: 多年之后再读Faster RCNN论文，产生了对框架的理解和一些改进的想法。
+description: 再读Faster RCNN论文，产生了对框架的理解和一些改进的想法。
 abbrlink: 451f615a
 date: 2023-03-08 16:00:14
 ---
@@ -47,4 +47,8 @@ RPN是Faster RCNN系列中最重要的一个模块，作者后续的Mask RCNN版
 
 <center>图2.2 RPN结构图</center>
 
-图2.2中红框箭头的输入则是通过backbone提取到的特征图，首先会通过红框中所示的Relu(Conv2d())，产生两个分支，上面的分支用于anchor的产生，下面的分支用于
+图2.2中红框箭头的输入则是通过backbone提取到的特征图，首先会通过红框中所示的Relu(Conv2d())，产生两个分支，上面的分支用于anchor的产生，判断哪些anchor是positive哪些是negative的，下面的分支用于计算anchor的BBox regression的偏移量，用来获取精确的proposal。
+
+#### 4. RoI
+
+#### 5. Head

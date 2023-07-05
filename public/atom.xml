@@ -6,7 +6,7 @@
   <link href="https://fengkh.github.io/atom.xml" rel="self"/>
   
   <link href="https://fengkh.github.io/"/>
-  <updated>2023-07-04T15:38:32.751Z</updated>
+  <updated>2023-07-05T07:08:56.620Z</updated>
   <id>https://fengkh.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://fengkh.github.io/posts/384b356c.html"/>
     <id>https://fengkh.github.io/posts/384b356c.html</id>
     <published>2023-07-03T09:31:38.000Z</published>
-    <updated>2023-07-04T15:38:32.751Z</updated>
+    <updated>2023-07-05T07:08:56.620Z</updated>
     
-    <content type="html"><![CDATA[<hr><h4 id="2023-07-02">2023-07-02</h4><p>锻炼时间： 16:00 - 17:30</p><p>位置： 学校健身房</p><p>锻炼部位： 胸部</p><p>核心项目：卧推、哑铃上斜卧推</p><hr><h4 id="2023-07-03">2023-07-03</h4><p>锻炼时间： 16:00 - 17:30</p><p>位置： 学校健身房</p><p>锻炼部位： 背部</p><p>核心项目：杠铃划船、高位下拉</p><hr><h4 id="2023-07-04">2023-07-04</h4><p>锻炼时间： 16:00 - 17:30</p><p>位置： 学校健身房</p><p>锻炼部位： 肩部</p><p>核心项目：实力推、坐姿推肩、哑铃飞鸟</p><hr>]]></content>
+    <content type="html"><![CDATA[<hr><h4 id="2023-07-02"><a href="#2023-07-02" class="headerlink" title="2023-07-02"></a>2023-07-02</h4><p>锻炼时间： 16:00 - 17:30</p><p>位置： 学校健身房</p><p>锻炼部位： 胸部</p><p>核心项目：卧推、哑铃上斜卧推 </p><hr><h4 id="2023-07-03"><a href="#2023-07-03" class="headerlink" title="2023-07-03"></a>2023-07-03</h4><p>锻炼时间： 16:00 - 17:30</p><p>位置： 学校健身房</p><p>锻炼部位： 背部</p><p>核心项目：杠铃划船、高位下拉</p><hr><h4 id="2023-07-04"><a href="#2023-07-04" class="headerlink" title="2023-07-04"></a>2023-07-04</h4><p>锻炼时间： 16:00 - 17:30</p><p>位置： 学校健身房</p><p>锻炼部位： 肩部</p><p>核心项目：实力推、坐姿推肩、哑铃飞鸟</p><hr><h4 id="2023-07-05"><a href="#2023-07-05" class="headerlink" title="2023-07-05"></a>2023-07-05</h4><p>锻炼时间： 16:00 - 17:30</p><p>位置： 学校健身房</p><p>锻炼部位： 腿部</p><p>核心项目：深蹲</p><hr>]]></content>
     
     
     <summary type="html">一件事要坚持且自律。</summary>
@@ -163,12 +163,12 @@
     <link href="https://fengkh.github.io/posts/451f615a.html"/>
     <id>https://fengkh.github.io/posts/451f615a.html</id>
     <published>2023-03-08T08:00:14.000Z</published>
-    <updated>2023-03-16T07:23:02.114Z</updated>
+    <updated>2023-07-04T15:43:46.832Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="一、简介">一、简介</h3><p>该论文作为目标检测中二阶段算法极具代表性的文章，提出了基于anchor的目标检测器，抛弃了传统的通过滑动窗口、SS（Selective Search）等方法生成目标候选框的方法，使用RPN直接生成目标候选框，极大地提升了目标候选框的生成速度。放到如今的2023年，虽然有视觉Transformer的强势冲击，RPN仍然是目标检测领域一个主力军。</p><p><a href="https://arxiv.org/abs/1506.01497">论文传送门</a></p><h3 id="二、网络结构">二、网络结构</h3><h4 id="1-结构总览">1. 结构总览</h4><p>整个Faster RCNN网络的结构可以分为<strong>四个大块</strong>：<strong>backbone、RPN、RoI、Head</strong>。</p><ol><li>backbone可以任意根据新的好的主干网络进行更换，主要用来进行输入图像的特征提取，现在甚至可以将其替换成基于transformer的ViT、Swim transformer之类的，这里不做过多赘述。</li><li>RPN（Region proposal network）作用是进行建议区域的提取网络，在特征图中先生成一系列的anchors，然后通过边界框回归等一系列操作，生成最终修正过的anchors。</li><li>RoI（Region of Interest）作用是将anchors映射回原特征图，并进行最大池化，得到固定长度的特征图。</li><li>Head，通过将固定长度的特征图进行FC之后进行类别softmax和BBox 回归。</li></ol><p>整个网络的前向传播过程也是按照这四个模块的顺序进行传播的，粗略来说就是首先输入一张（一批）图片，经过backbone得到输出为输入图像的特征图，然后将特征图输入到RPN中，得到的输出为特征图的区域建议框（anchor），并且会在这一步将从特征图上选取的一系列区域建议框映射到原特征图的位置中，并在这一步将边缘的anchor的边框与特征图的边框进行对齐（即在边缘的anchor可能出现超出图片边缘的边框，则将图片边缘当做该anchor的新边界）。然后将对应好的anchors作为输入进入RoI层， 得到的输出为固定长度的proposal feature maps。最后就是Head，将proposal feature maps作为输入，经过全连接层，进行分类和边界框回归，得到最终结果，其网络结构如图2.1所示。</p><center><img src= 'https://imagebed-2jk.pages.dev/img/fasterrcnn.png' width ='85%'></center><center>图2.1 Faster RCNN结构图</center><h4 id="2-Backbone">2. Backbone</h4><p>原文使用到的backbone为VGG16，这里对VGG16不做详细介绍，因为backbone在后续的研究可以被随意更换，Pytorch官方更是实现了Faster RCNN的多个backbone版本，可以在<a href="https://github.com/pytorch/vision/blob/main/torchvision/models/detection/faster_rcnn.py">官方代码</a>中查看。</p><h4 id="3-RPN">3. RPN</h4><p>RPN是Faster RCNN系列中最重要的一个模块，作者后续的Mask RCNN版本中也仍然沿用了这一设计，RPN的结构如图2.2所示。</p><center><img src='https://imagebed-2jk.pages.dev/img/RPN.png' width='70%'></center><center>图2.2 RPN结构图</center><p>图2.2中红框箭头的输入则是通过backbone提取到的特征图，首先会通过红框中所示的Relu(Conv2d())，产生两个分支，上面的分支用于anchor的产生，下面的分支用于</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>该论文作为目标检测中二阶段算法极具代表性的文章，提出了基于anchor的目标检测器，抛弃了传统的通过滑动窗口、SS（Selective Search）等方法生成目标候选框的方法，使用RPN直接生成目标候选框，极大地提升了目标候选框的生成速度。放到如今的2023年，虽然有视觉Transformer的强势冲击，RPN仍然是目标检测领域一个主力军。</p><p><a href="https://arxiv.org/abs/1506.01497">论文传送门</a></p><h3 id="二、网络结构"><a href="#二、网络结构" class="headerlink" title="二、网络结构"></a>二、网络结构</h3><h4 id="1-结构总览"><a href="#1-结构总览" class="headerlink" title="1. 结构总览"></a>1. 结构总览</h4><p>整个Faster RCNN网络的结构可以分为<strong>四个大块</strong>：<strong>backbone、RPN、RoI、Head</strong>。</p><ol><li>backbone可以任意根据新的好的主干网络进行更换，主要用来进行输入图像的特征提取，现在甚至可以将其替换成基于transformer的ViT、Swim transformer之类的，这里不做过多赘述。</li><li>RPN（Region proposal network）作用是进行建议区域的提取网络，在特征图中先生成一系列的anchors，然后通过边界框回归等一系列操作，生成最终修正过的anchors。</li><li>RoI（Region of Interest）作用是将anchors映射回原特征图，并进行最大池化，得到固定长度的特征图。</li><li>Head，通过将固定长度的特征图进行FC之后进行类别softmax和BBox 回归。</li></ol><p>整个网络的前向传播过程也是按照这四个模块的顺序进行传播的，粗略来说就是首先输入一张（一批）图片，经过backbone得到输出为输入图像的特征图，然后将特征图输入到RPN中，得到的输出为特征图的区域建议框（anchor），并且会在这一步将从特征图上选取的一系列区域建议框映射到原特征图的位置中，并在这一步将边缘的anchor的边框与特征图的边框进行对齐（即在边缘的anchor可能出现超出图片边缘的边框，则将图片边缘当做该anchor的新边界）。然后将对应好的anchors作为输入进入RoI层， 得到的输出为固定长度的proposal feature maps。最后就是Head，将proposal feature maps作为输入，经过全连接层，进行分类和边界框回归，得到最终结果，其网络结构如图2.1所示。</p><center><img src= 'https://imagebed-2jk.pages.dev/img/fasterrcnn.png' width ='85%'></center><center>图2.1 Faster RCNN结构图</center><h4 id="2-Backbone"><a href="#2-Backbone" class="headerlink" title="2. Backbone"></a>2. Backbone</h4><p>原文使用到的backbone为VGG16，这里对VGG16不做详细介绍，因为backbone在后续的研究可以被随意更换，Pytorch官方更是实现了Faster RCNN的多个backbone版本，可以在<a href="https://github.com/pytorch/vision/blob/main/torchvision/models/detection/faster_rcnn.py">官方代码</a>中查看。</p><h4 id="3-RPN"><a href="#3-RPN" class="headerlink" title="3. RPN"></a>3. RPN</h4><p>RPN是Faster RCNN系列中最重要的一个模块，作者后续的Mask RCNN版本中也仍然沿用了这一设计，RPN的结构如图2.2所示。</p><center><img src='https://imagebed-2jk.pages.dev/img/RPN.png' width='70%'></center><center>图2.2 RPN结构图</center><p>图2.2中红框箭头的输入则是通过backbone提取到的特征图，首先会通过红框中所示的Relu(Conv2d())，产生两个分支，上面的分支用于anchor的产生，判断哪些anchor是positive哪些是negative的，下面的分支用于计算anchor的BBox regression的偏移量，用来获取精确的proposal。</p><h4 id="4-RoI"><a href="#4-RoI" class="headerlink" title="4. RoI"></a>4. RoI</h4><h4 id="5-Head"><a href="#5-Head" class="headerlink" title="5. Head"></a>5. Head</h4>]]></content>
     
     
-    <summary type="html">多年之后再读Faster RCNN论文，产生了对框架的理解和一些改进的想法。</summary>
+    <summary type="html">再读Faster RCNN论文，产生了对框架的理解和一些改进的想法。</summary>
     
     
     
