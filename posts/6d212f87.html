@@ -1,0 +1,444 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><div id="myscoll"></div><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Camouflaged Object Detection 阅读笔记 | fengkh🔥</title><meta name="keywords" content="深度学习,论文阅读"><meta name="author" content="fengkh🔥"><meta name="copyright" content="fengkh🔥"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="这是一篇2020年的CVPR，论文工作：提出数据集COD10K和针对该数据集的伪装目标检测模型。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Camouflaged Object Detection 阅读笔记">
+<meta property="og:url" content="https://fengkh.github.io/posts/6d212f87.html">
+<meta property="og:site_name" content="fengkh🔥">
+<meta property="og:description" content="这是一篇2020年的CVPR，论文工作：提出数据集COD10K和针对该数据集的伪装目标检测模型。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://imagebed-2jk.pages.dev/img/covers/556062.jpg">
+<meta property="article:published_time" content="2021-10-01T12:35:40.000Z">
+<meta property="article:modified_time" content="2023-08-09T02:24:54.745Z">
+<meta property="article:author" content="fengkh🔥">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="论文阅读">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imagebed-2jk.pages.dev/img/covers/556062.jpg"><link rel="shortcut icon" href="/"><link rel="canonical" href="https://fengkh.github.io/posts/6d212f87"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.js',
+      css: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Camouflaged Object Detection 阅读笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-09 10:24:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><style id="themeColor"></style><style id="rightSide"></style><style id="transPercent"></style><style id="blurNum"></style><style id="settingStyle"></style><span id="fps"></span><style id="defineBg"></style><style id="menu_shadow"></style><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="fengkh🔥" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/avatar.jpg" onerror="onerror=null;src='/assets/r1.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-home"></use></svg><span class="menu_word" style="font-size:17px"> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-guidang1"></use></svg><span class="menu_word" style="font-size:17px"> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-fenlei"></use></svg><span class="menu_word" style="font-size:17px"> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-sekuaibiaoqian"></use></svg><span class="menu_word" style="font-size:17px"> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/site/time/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-xianxingshalou"></use></svg><span class="menu_word" style="font-size:17px"> 一路上</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-liuyan"></use></svg><span class="menu_word" style="font-size:17px"> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/personal/about/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-paperplane"></use></svg><span class="menu_word" style="font-size:17px"> 个人</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">fengkh🔥</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-home"></use></svg><span class="menu_word" style="font-size:17px"> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-guidang1"></use></svg><span class="menu_word" style="font-size:17px"> 归档</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-fenlei"></use></svg><span class="menu_word" style="font-size:17px"> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/tags/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-sekuaibiaoqian"></use></svg><span class="menu_word" style="font-size:17px"> 标签</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/site/time/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-xianxingshalou"></use></svg><span class="menu_word" style="font-size:17px"> 一路上</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-liuyan"></use></svg><span class="menu_word" style="font-size:17px"> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/personal/about/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-paperplane"></use></svg><span class="menu_word" style="font-size:17px"> 个人</span></a></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"><div id="search-button"><a class="search faa-parent animated-hover" title="检索站内任何你想要的信息"><svg class="faa-tada icon" style="height:24px;width:24px;fill:currentColor;position:relative;top:6px" aria-hidden="true"><use xlink:href="#icon-valentine_-search-love-find-heart"></use></svg><span> 搜索</span></a></div><a class="meihua faa-parent animated-hover" onclick="toggleWinbox()" title="美化设置-自定义你的风格" id="meihua-button"><svg class="faa-tada icon" style="height:26px;width:26px;fill:currentColor;position:relative;top:8px" aria-hidden="true"><use xlink:href="#icon-tupian1"></use></svg></a><a class="sun_moon faa-parent animated-hover" onclick="switchNightMode()" title="浅色和深色模式转换" id="nightmode-button"><svg class="faa-tada" style="height:25px;width:25px;fill:currentColor;position:relative;top:7px" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon">       </use></svg></a><div id="toggle-menu"><a><i class="fas fa-bars fa-fw"></i></a></div></div></div></nav><div id="post-info"><h1 class="post-title">Camouflaged Object Detection 阅读笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><svg class="meta_icon post-meta-icon" style="width:30px;height:30px;position:relative;top:10px"><use xlink:href="#icon-rili"></use></svg><span class="post-meta-label">发表于 </span><time class="post-meta-date-created" datetime="2021-10-01T12:35:40.000Z" title="发表于 2021-10-01 20:35:40">2021-10-01</time><span class="post-meta-separator">|</span><svg class="meta_icon post-meta-icon" style="width:18px;height:18px;position:relative;top:5px"><use xlink:href="#icon-gengxin1"></use></svg><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-09T02:24:54.745Z" title="更新于 2023-08-09 10:24:54">2023-08-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><svg class="meta_icon post-meta-icon" style="width:18px;height:18px;position:relative;top:5px"><use xlink:href="#icon-biaoqian"></use></svg><a class="post-meta-categories" href="/categories/Papers/">Papers</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><svg class="meta_icon post-meta-icon" style="width:25px;height:25px;position:relative;top:8px"><use xlink:href="#icon-charuword"></use></svg><span class="post-meta-label">字数总计:</span><span class="word-count">3015</span><span class="post-meta-separator">|</span><svg class="meta_icon post-meta-icon" style="width:20px;height:20px;position:relative;top:5px"><use xlink:href="#icon-shizhong"></use></svg><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Camouflaged Object Detection 阅读笔记"><svg class="meta_icon post-meta-icon" style="width:25px;height:25px;position:relative;top:5px"><use xlink:href="#icon-eye"></use></svg><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="0-Summary">0. Summary</h3>
+<p>  伪装目标检测（Camouflaged object detection，COD）旨在对几乎完全融入周围环境的目标进行识别。该问题的主要难点在于：待检测目标与周围背景具有极高的内在相似性。本文为了解决这样一个问题，提出了名为COD10K的伪装目标检测数据集，并针对该数据集，提出了 Search Identification Network (SINet) 网络模型。该网络模型在包括COD10K以及其他测试数据集上与其他最新的目标检测模型做对比实验，实验结果优于其他所有模型。</p>
+<p><a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content_CVPR_2020/html/Fan_Camouflaged_Object_Detection_CVPR_2020_paper.html">论文传送门</a>，<a target="_blank" rel="noopener" href="https://github.com/DengPingFan/SINet">源代码传送门</a>。</p>
+<h3 id="1-Introduction">1. Introduction</h3>
+<p>  伪装目标检测大概需要做什么工作或者实现什么效果呢？如图1.1，第一行数据来自于COD10K数据集，第二行就是需要实现的检测效果。可以很清楚的看出，文章做的工作其实就是对于图片中一些边界与背景具有高相似度的物体进行识别或者分割。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_1_1.jpg" alt="图1.1 部分COK10K数据集中数据（row 1）及模型识别效果（row 2)"></p>
+<div align = "center">图1.1 部分COK10K数据集中数据（row 1）及模型识别效果（row 2）</div> 
+<p>  本文主要贡献：</p>
+<ol>
+<li>
+<p>提出了COD10K数据集，专门用于COD。该数据集包括了10K张图片，目标类别包括78种水生、飞行、两栖动物、地面动物。其中每张图片的伪装目标都分层次地进行了标注，标注内容包括类别（category）、边界框（bounding-box）、对象等级（object-level）和实例等级（instance-level）。</p>
+</li>
+<li>
+<p>通过对比COD10K和其他两个现有的数据集，本文提供了12个SOTA（state-of-the-art）基线（baseline）的严格评估，使文章中的研究成为最大的COD研究。</p>
+</li>
+<li>
+<p>文章提出了SINet（Search and Identification Net）伪装目标检测框架，整个框架的训练时间仅为1小时，但是却在所有现有COD数据集上达到了SOTA的性能，在深度学习领域开创了首个完整的伪装目标检测的benchmark。</p>
+</li>
+</ol>
+<h3 id="2-Related-Work">2. Related Work</h3>
+<p>  通过查阅文献，可以将目标大致分类为三种类别：<strong>一般目标</strong>、<strong>突出目标</strong>、<strong>伪装目标</strong>。</p>
+<ul>
+<li>
+<p>GOD（Generic Object Detection）：</p>
+<p>最流行计算机视觉的思想之一中认为一般目标可能是突出的，也可能是伪装的；伪装目标可以被看做是复杂情况的一般目标。典型的GOD任务包括了语义分割和全景分割任务。</p>
+</li>
+<li>
+<p>SOD（Salient Object Detection）:</p>
+<p>SOD任务旨在识别图片中最突出的（most attention-grabbing）目标，并且分割出它的像素级轮廓。尽管“突出”和“伪装”两个词语的意思是相对立的，但是包含突出目标的图片可以作为伪装目标检测数据集的负样本。</p>
+</li>
+<li>
+<p>COD（Camouflaged Object Detection）：</p>
+<p>  <u>伪装目标分类</u>：伪装图片可以被粗略的分为两类——天然伪装和人工伪装。天然伪装是指动物为了避免被其天敌猎杀从而实现的一种生存技能；人工伪装通常发生在产品的制造过程（缺陷）或者用于游戏、艺术的隐藏信息。</p>
+<p>  <u>评估矩阵</u>：由于MAE（Mean absolute error）已经被广泛应用于SOD任务中，因此文本也尝试使用MAE作为评估预测图C和真实结果G之间像素级准确率的度量。虽然MAE能够评估误差和错误的数量，但是MAE不能确定错误发生的地方。所以将采用基于人类视觉感知的E-measure来评估整体结果和伪装目标检测的定位精度。同时，由于伪装目标通常有不同的形状，因此还需要一个用于评估结构相似度的度量，本文考虑了S-measure和F-measure作为该任务的度量模型。</p>
+</li>
+</ul>
+<h3 id="3-Proposed-Dataset">3. Proposed Dataset</h3>
+<p>  这是一个原文作者提出的一个有10,000张伪装目标图片的数据集COD10K，其中的数据大部分来自Flicker（笔者注：笔者这里怀疑是作者的笔误，并没有名为Flicker的图片网站，应该是<a target="_blank" rel="noopener" href="https://www.j-h-k.com/photography-flickr.html">Flickr</a>。），其余的图片（大概200张）来自于其他网站。同时为了避免选择偏差（selection bias），该数据集还搜集了3,000张突出目标图片，1,934张非伪装目标图片。关于数据集COD10K的具体细节如图3.1所示，（a）图表示了分类学系统及其直方图分布，（b）图代表了数据集中的图像分辨率分布，（c）图表示了词云分布，即标签中所用词语的地理分布，（d）图表示了不同类别的Object/Instance的数量分布，（e）图展示了一些子类。</p>
+<p>  <strong>关于Object和Instance的区分</strong>：作者强调现有的COD数据集主要聚焦在object-level上，然而能够一个对象解析为它的实例对于计算机视觉研究者们是否能够编辑或者理解一个场景来说是至关重要的。因此，作者进一步在实例级（instance-level）上标注了数据集。</p>
+<p>  标注完成之后，从COD10K数据集中的每个子类中总共随机挑选6000张图片作为训练集，4000张图片作为测试集。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_3_1.jpg" alt="图3.1 来自COD10K数据集的统计和伪装类别示例"></p>
+<div align = "center">图3.1 来自COD10K数据集的统计和伪装类别示例</div>
+<h3 id="4-Proposed-Framework">4. Proposed Framework</h3>
+<h4 id="4-1-Overview">4.1 Overview</h4>
+<p>  文中提出的SINet框架主要由**Search Module（SM）<strong>和</strong>Identification Module（IM）**两个模块组成，其中SM模块负责寻找伪装目标，IM模块主要负责对伪装目标的位置进行精确定位。SINet的框架模型如图4.1所示，其中的具体模块的解释将在一下两个部分介绍。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_4_1.jpg" alt="图4.1 SINet网络结构"></p>
+<div align = "center">图4.1 SINet网络结构</div>
+<h4 id="4-2-Search-Module（SM）">4.2 Search Module（SM）</h4>
+<h5 id="4-2-1-Bconv（Conv-BN-ReLu）">4.2.1 Bconv（Conv+BN+ReLu）</h5>
+<p>  Bconv是由Convolution、Batch Normalization（BN）和ReLu激活函数共同组成的一个卷积层，其中BN通过将数据标准化，能够加速权重参数的收敛。ReLu作为激活函数,其形式如图4.2所示。从图中不难看出，ReLu函数将所有的负值变为0，而所有的正值都不变，这种操作叫做<strong>单侧抑制</strong>。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_4_2.jpg" alt="图4.2 Relu激活函数"></p>
+<div align = "center">图4.2 ReLu激活函数</div>
+<h5 id="4-2-2-Receptive-Field（RF）">4.2.2 Receptive Field（RF）</h5>
+<p>  感受野（RF）组件包括了五个分支，如图4.3。在每个分支的第一个卷积层均有32个尺寸为1*1的卷积核，目的是为了将原图在不改变分辨率的前提下将图像通道减少到32个。并且，前三个分支后紧连着两个卷积层，紧接着前三个分支后都紧跟着不同尺寸的空洞卷积层，然后将卷积后的结果与第四个分支的结果进行连接操作之后使用一个Bconv层进行卷积，最后将第五个分支的结果与卷积之后的结果加起来作为RF模块的输出。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_4_3.jpg" alt="图4.3 RF结构图"></p>
+<div align = "center">图4.3 Receptive Field结构图</div>
+<p>  SM模块做的工作主要是通过使用不同层次的特征和RF模块，初步定位图像中伪装目标的位置。也就是论文原文里提到的猎人定位猎物位置的那一步。接下来就要使用IM模块来对伪装目标的轮廓进行识别，即对目标进行精确定位。</p>
+<h4 id="4-3-Identification-Module（IM）">4.3 Identification Module（IM）</h4>
+<p>  SM（Identification Module）模块的作用对应于文中提到的猎人对目标进行精准定位的部分。在这个部分中提到了两个组件，一个是PDC（Partial Decoder Component），通过阅读论文，笔者认为PDC模块是将SM模块的功能组件进行了集成之后的一个功能模块。首先PDC模块是将RF模块的一些输出通过PDC模块得到一个输出Ccsm。另外一个模块是基于注意力机制提出的SA（Search Attention），SA模块的输入为X2层的特征和PDC组件的输出经过Sigmoid激活函数的结果，联合这两个输入，通过注意力机制消除无关特征的干扰，然后通过RF组件扩大感受野，最终得到另一个输出Ccim。</p>
+<p>  得到上述两个输出Ccsm和Ccim之后，使用交叉熵损失函数对这两个输出结果进行训练，得到最终的训练模型。</p>
+<h3 id="5-Benchmark-Experiment">5. Benchmark Experiment</h3>
+<h4 id="5-1-Experimental-Settings">5.1 Experimental Settings</h4>
+<p>  本文中的实验部分训练集采用了CAMO、COD10K和CAMO+COD10K+EXTRA，其中CAMO和COD10K使用数据集中的默认训练集；测试集使用了CHAMELEON数据集和CAMO、COD10K的测试集。关于Baseline方面，由于没有公开可用的基于深度网络的COD模型，所以文中基于以下三个标准选取了12个深度学习baselines：（1）经典模型，（2）最近发表的模型，（3）在某个特定领域达到SOTA表现的模型，例如GOD和SOD。这些选取到的模型都用建议的参数设置进行了训练。</p>
+<h4 id="5-2-Results-and-Data-Analysis">5.2 Results and Data Analysis</h4>
+<p>  SINet以及文中选取的12个模型在CHAMELEON、CAMO-Test、COD10K-Test上的测试结果如图5.1所示，可以很明显的看出，在三个测试数据集上，SINet的表现均优于其他模型。特别地，GOD模型（如FPN）的表现比SOD模型（如CPD、EGNet）要更差一些，表明SOD框架可能更加适用于COD任务。但是，相比于SOD和GOD模型，SINet显著降低了训练时长（比如：SINet训练一小时，而EGNet则需要训练48小时）且还能在所有数据集上达到SOTA的表现，这说明SINet可能是COD问题的一个有希望的解决方法。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_5_1.jpg" alt="图5.1 定性结果"></p>
+<div align = "center">图5.1 不同模型在不同数据集上的定性结果</div>
+<h4 id="5-3-Cross-dataset-Generalization">5.3 Cross-dataset Generalization</h4>
+<p>  由于数据集的普遍性和难度在训练或者评估不同算法的时候起着至关重要的作用，因此文中实验部分还采用了Cross-dataset Generalization（跨数据集泛化），其思路是：在一个数据集上训练模型，在其他数据集上进行测试。具体操作为：从CAMO和COD10K两个数据集中随机选取800张图片作为训练集，200张图片作为测试集。为了公平起见，作者在每个数据集上训练SINet直到loss稳定。结果如图5.2所示，其中“Self”是指训练和测试在同一个数据集上，“Mean Others”表示除了自己以外其他的平均分（这里用到的训练集和测试集的设置与图5.1中的设置不同，所以不具有性能可比性）。图上结果表明，COD10K的确是最复杂的，因为该数据集有大量的具有挑战性的伪装目标检测图。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_5_2.jpg" alt="图5.2 跨数据集泛化"></p>
+<div align = "center">图5.2 跨数据集泛化的S-measure</div>
+<h4 id="5-4-Qualitative-Analysis">5.4 Qualitative Analysis</h4>
+<p>如图5.3，为SINet与另外两个baseline算法的定性比较结果。可以看到的是，PFANet虽然能定位伪装目标的位置，但是输出不够精确。EGNet由于使用了边界特征，能够比PFANet更好的定位边界，但是仍然会丢失一些细小的细节，比如第一行中的鱼。对于不确定的边界，遮挡和小物体这些具有挑战性的例子，SINet能通过细节推测出伪装目标的位置，进一步说明了模型的健壮性。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_5_2.jpg" alt="图5.3 定性分析"></p>
+<div align="center">图5.3 SINet和两个top-performing的baselines在COD10K上的定性分析</div>
+<h3 id="6-Potential-Applications">6. Potential Applications</h3>
+<p>COD潜在的应用场景文中提到了：医学图像分割、野外搜救或者嵌入图搜索引擎。</p>
+<h3 id="7-Conclusion">7. Conclusion</h3>
+<p>本文提出了极具贡献意义的数据集COK10K和COD领域的新baseline——SINet框架。在今后的工作中，作者计划扩展COD10K数据集，提供各种形式的输入，例如RGB-D伪装目标检测(类似于RGB-D显著目标检测等等）。新技术如弱监督学习、Zero-shot Learning、VAE和多尺度主干网络都会探索。</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>Camouflaged Object Detection 阅读笔记</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://fengkh.github.io/posts/6d212f87.html">https://fengkh.github.io/posts/6d212f87.html</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>fengkh🔥</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2021-10-01</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2023-08-09</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><div class="tags-punctuation"><svg class="faa-tada icon" style="height:1.1em;width:1.1em;fill:currentColor;position:relative;top:2px;margin-right:3px" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian"></use></svg></div>深度学习</a><a class="post-meta__tags" href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"><div class="tags-punctuation"><svg class="faa-tada icon" style="height:1.1em;width:1.1em;fill:currentColor;position:relative;top:2px;margin-right:3px" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian"></use></svg></div>论文阅读</a></div></div><link rel="stylesheet" href="/css/coin.css" media="defer" onload="this.media='all'"/><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">投喂作者</span><div class="coin-wrapper"><div class="coin"><div class="coin__middle"></div><div class="coin__back"></div><div class="coin__front"></div></div></div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/assets/wechatpayimg.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/wechatpayimg.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/assets/alipayimg.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/alipayimg.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></button></div><audio id="coinAudio" src="https://npm.elemecdn.com/akilar-candyassets@1.0.36/audio/aowu.m4a"></audio><script defer="defer" src="/js/coin.js"></script><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/8f5ba4dd.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/covers/699287.jpg" onerror="onerror=null;src='/assets/r2.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">openslide安装避坑指南</div></div></a></div><div class="next-post pull-right"><a href="/posts/4a17b156.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/covers/556062.jpg" onerror="onerror=null;src='/assets/r2.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hello World</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/451f615a.html" title="深入理解Faster RCNN"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/covers/556062.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-07-04</div><div class="title">深入理解Faster RCNN</div></div></a></div><div><a href="/posts/324ed694.html" title="A survey of modern Deep learning based Object Detection Models"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/covers/699287.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-03-16</div><div class="title">A survey of modern Deep learning based Object Detection Models</div></div></a></div><div><a href="/posts/c1c48943.html" title="einsum用法与理解"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/covers/556062.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-03-21</div><div class="title">einsum用法与理解</div></div></a></div><div><a href="/posts/f700e2b8.html" title="Pytorch入门级深度学习框架搭建"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://imagebed-2jk.pages.dev/img/covers/699287.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-03-16</div><div class="title">Pytorch入门级深度学习框架搭建</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><svg class="meta_icon" style="width:22px;height:22px;position:relative;top:5px"><use xlink:href="#icon-mulu1"></use></svg><span style="font-weight:bold">目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-Summary"><span class="toc-text">0. Summary</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Introduction"><span class="toc-text">1. Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Related-Work"><span class="toc-text">2. Related Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Proposed-Dataset"><span class="toc-text">3. Proposed Dataset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Proposed-Framework"><span class="toc-text">4. Proposed Framework</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Overview"><span class="toc-text">4.1 Overview</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-Search-Module%EF%BC%88SM%EF%BC%89"><span class="toc-text">4.2 Search Module（SM）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-1-Bconv%EF%BC%88Conv-BN-ReLu%EF%BC%89"><span class="toc-text">4.2.1 Bconv（Conv+BN+ReLu）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-2-Receptive-Field%EF%BC%88RF%EF%BC%89"><span class="toc-text">4.2.2 Receptive Field（RF）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-Identification-Module%EF%BC%88IM%EF%BC%89"><span class="toc-text">4.3 Identification Module（IM）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Benchmark-Experiment"><span class="toc-text">5. Benchmark Experiment</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-Experimental-Settings"><span class="toc-text">5.1 Experimental Settings</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-Results-and-Data-Analysis"><span class="toc-text">5.2 Results and Data Analysis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-Cross-dataset-Generalization"><span class="toc-text">5.3 Cross-dataset Generalization</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-Qualitative-Analysis"><span class="toc-text">5.4 Qualitative Analysis</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Potential-Applications"><span class="toc-text">6. Potential Applications</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-Conclusion"><span class="toc-text">7. Conclusion</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-color: transparent;"><div id="footer-wrap"><div id="ft"><div class="ft-item-1"><div class="t-top"><div class="t-t-l"><p class="ft-t t-l-t">格言🧬</p><div class="bg-ad"><div>再看看那个光点，它就在这里，这是家园，这是我们 —— 你所爱的每一个人，你认识的一个人，你听说过的每一个人，曾经有过的每一个人，都在它上面度过他们的一生✨</div><div class="btn-xz-box"><a class="btn-xz" target="_blank" rel="noopener" href="https://stellarium.org/">点击开启星辰之旅</a></div></div></div><div class="t-t-r"><p class="ft-t t-l-t">猜你想看💡</p><ul class="ft-links"><li><a href="/personal/about/">关于作者</a><a href="/archives/">文章归档</a></li><li><a href="/categories/">文章分类</a><a href="/tags/">文章标签</a></li><li><a href="/site/time/">建设进程</a><a href="/comments/">留点什么</a></li></ul></div></div></div><div class="ft-item-2"><p class="ft-t">推荐友链⌛</p><div class="ft-img-group"><div class="img-group-item"><a target="_blank" rel="noopener" href="https://mooriarty.github.io/" title="Biang~"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://avatars.githubusercontent.com/u/55788582?s=400&amp;u=8e52492abaed3ec32baa7b76da902470f5d7226f&amp;v=4" alt=""/></a></div></div></div></div><div class="copyright"><span><b>&copy;2021-2023</b></span><span><b>&nbsp;&nbsp;By fengkh🔥</b></span></div><div id="workboard"></div><p id="ghbdages"></p></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button class="share" type="button" title="右键模式" onclick="changeMouseMode()"><i class="fas fa-mouse"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog right_side"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button class="share" type="button" title="分享链接" onclick="share()"><i class="fas fa-share-nodes"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="fa fa-search"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()"><i class="fa fa-copy"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="#post-comment"><i class="fas fa-comment"></i><span>空降评论</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:randomPost()"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:switchNightMode();"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="/personal/about/"><i class="fa fa-info-circle"></i><span>关于博客</span></a><a class="rightMenu-item" href="javascript:toggleWinbox();"><i class="fas fa-cog"></i><span>美化设置</span></a><a class="rightMenu-item" href="javascript:rmf.fullScreen();"><i class="fas fa-expand"></i><span>切换全屏</span></a><a class="rightMenu-item" href="javascript:window.print();"><i class="fa-solid fa-print"></i><span>打印页面</span></a></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.umd.min.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js" type="module"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 5000);
+document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://my-twikoo-fengkh.vercel.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://my-twikoo-fengkh.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.staticfile.org/twikoo/1.6.8/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script async src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script><script async src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script><script async src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script><script defer type="text/javascript" src="https://cdn1.tianli0.top/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script defer src="https://cdn1.tianli0.top/gh/nextapps-de/winbox/dist/winbox.bundle.min.js"></script><script async src="//at.alicdn.com/t/c/font_3586335_hsivh70x0fm.js"></script><script async src="//at.alicdn.com/t/c/font_3636804_gr02jmjr3y9.js"></script><script async src="//at.alicdn.com/t/c/font_3612150_kfv55xn3u2g.js"></script><script async src="https://cdn.wpon.cn/2022-sucai/Gold-ingot.js"></script><canvas id="universe"></canvas><canvas id="snow"></canvas><script defer src="/js/fomal.js"></script><script defer src="/js/runtime.js"></script><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn1.tianli0.top/npm/js-heo@1.0.12/metingjs/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show","#web_bg",".js-pjax","#bibi","body > title","#app","#tag-echarts","#posts-echart","#categories-echarts"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:24%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(/assets/cover.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Coding/&quot;);" href="javascript:void(0);">Coding</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">Coding</span></li><li class="categoryBar-list-item" style="background:url(/assets/cover.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Papers/&quot;);" href="javascript:void(0);">Papers</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">Papers</span></li><li class="categoryBar-list-item" style="background:url(/assets/cover.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Life/&quot;);" href="javascript:void(0);">Life</a><span class="categoryBar-list-count">8</span><span class="categoryBar-list-descr">Life</span></li><li class="categoryBar-list-item" style="background:url(/assets/cover.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Environments/&quot;);" href="javascript:void(0);">Environments</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">Environments</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('gitZone');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('gitZone') && (location.pathname ==='/personal/about/'|| '/personal/about/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://gitcalendar.fomal.cc/api?fengkh",['#d9e0df', '#c6e0dc', '#a8dcd4', '#9adcd2', '#89ded1', '#77e0d0', '#5fdecb', '#47dcc6', '#39dcc3', '#1fdabe', '#00dab9'],'fengkh')
+    }
+  </script><!-- hexo injector body_end end --></body></html>
