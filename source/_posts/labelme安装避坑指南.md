@@ -3,7 +3,7 @@ title: labelme安装避坑指南
 tags: 
   - Python packages
 toc: true
-categories: Environments
+categories: Coding
 description: python包安装踩坑路
 abbrlink: b8ce5541
 date: 2021-11-09 22:30:05

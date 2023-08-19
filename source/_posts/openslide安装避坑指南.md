@@ -3,7 +3,7 @@ title: openslide安装避坑指南
 tags: 
   - Python packages
 toc: true
-categories: Environments
+categories: Coding
 description: python包安装踩坑路
 abbrlink: 8f5ba4dd
 date: 2021-11-09 22:29:47

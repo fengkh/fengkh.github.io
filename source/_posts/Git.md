@@ -4,7 +4,7 @@ tags:
   - 实用工具
   - Git
 toc: true
-categories: Environments
+categories: Coding
 description: git和github等仓库管理
 abbrlink: 29207ea7
 date: 2022-10-10 15:34:24
