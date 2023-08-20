@@ -124,7 +124,7 @@ img_tensor = tensor_trans(Image.open(''))
 
 
 
-<img src='https://imagebed-2jk.pages.dev/img/Pytorch_Untitled.png' width='70%'>
+<img src='https://imagebed-2jk.pages.dev/img/Pytorch/Pytorch_Untitled.png' width='70%'>
 
 ​																											transfroms工具的使用流程
 

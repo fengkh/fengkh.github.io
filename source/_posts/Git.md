@@ -20,7 +20,7 @@ date: 2022-10-10 15:34:24
 
 
 
-<center><img src='https://imagebed-2jk.pages.dev/img/Git_Untitled.png' width='80%'></center>
+<center><img src='https://imagebed-2jk.pages.dev/img/Git/Git_Untitled.png' width='80%'></center>
 
 
 

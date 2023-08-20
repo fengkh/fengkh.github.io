@@ -30,7 +30,7 @@ date: 2021-10-01 20:35:40
 
 
 
-![图1.1 部分COK10K数据集中数据（row 1）及模型识别效果（row 2)](https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_1_1.jpg)
+![图1.1 部分COK10K数据集中数据（row 1）及模型识别效果（row 2)](https://imagebed-2jk.pages.dev/img/Camouflaged object detection/Camouflaged-object-detection_1_1.jpg)
 
 <div align = "center">图1.1 部分COK10K数据集中数据（row 1）及模型识别效果（row 2）</div> 
 
@@ -92,7 +92,7 @@ date: 2021-10-01 20:35:40
 
 
 
-![图3.1 来自COD10K数据集的统计和伪装类别示例](https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_3_1.jpg)
+![图3.1 来自COD10K数据集的统计和伪装类别示例](https://imagebed-2jk.pages.dev/img/Camouflaged object detection/Camouflaged-object-detection_3_1.jpg)
 
 <div align = "center">图3.1 来自COD10K数据集的统计和伪装类别示例</div>
 
@@ -108,7 +108,7 @@ date: 2021-10-01 20:35:40
 
 
 
-![图4.1 SINet网络结构](https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_4_1.jpg)
+![图4.1 SINet网络结构](https://imagebed-2jk.pages.dev/img/Camouflaged object detection/Camouflaged-object-detection_4_1.jpg)
 
 <div align = "center">图4.1 SINet网络结构</div>
 
@@ -122,7 +122,7 @@ date: 2021-10-01 20:35:40
 
 &emsp;&emsp;Bconv是由Convolution、Batch Normalization（BN）和ReLu激活函数共同组成的一个卷积层，其中BN通过将数据标准化，能够加速权重参数的收敛。ReLu作为激活函数,其形式如图4.2所示。从图中不难看出，ReLu函数将所有的负值变为0，而所有的正值都不变，这种操作叫做**单侧抑制**。
 
-![图4.2 Relu激活函数](https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_4_2.jpg)
+![图4.2 Relu激活函数](https://imagebed-2jk.pages.dev/img/Camouflaged object detection/Camouflaged-object-detection_4_2.jpg)
 
 <div align = "center">图4.2 ReLu激活函数</div>
 
@@ -134,7 +134,7 @@ date: 2021-10-01 20:35:40
 
 &emsp;&emsp;感受野（RF）组件包括了五个分支，如图4.3。在每个分支的第一个卷积层均有32个尺寸为1*1的卷积核，目的是为了将原图在不改变分辨率的前提下将图像通道减少到32个。并且，前三个分支后紧连着两个卷积层，紧接着前三个分支后都紧跟着不同尺寸的空洞卷积层，然后将卷积后的结果与第四个分支的结果进行连接操作之后使用一个Bconv层进行卷积，最后将第五个分支的结果与卷积之后的结果加起来作为RF模块的输出。
 
-![图4.3 RF结构图](https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_4_3.jpg)
+![图4.3 RF结构图](https://imagebed-2jk.pages.dev/img/Camouflaged object detection/Camouflaged-object-detection_4_3.jpg)
 
 <div align = "center">图4.3 Receptive Field结构图</div>
 
@@ -170,7 +170,7 @@ date: 2021-10-01 20:35:40
 
 
 
-![图5.1 定性结果](https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_5_1.jpg)
+![图5.1 定性结果](https://imagebed-2jk.pages.dev/img/Camouflaged object detection/Camouflaged-object-detection_5_1.jpg)
 
 <div align = "center">图5.1 不同模型在不同数据集上的定性结果</div>
 
@@ -184,7 +184,7 @@ date: 2021-10-01 20:35:40
 
 
 
-![图5.2 跨数据集泛化](https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_5_2.jpg)
+![图5.2 跨数据集泛化](https://imagebed-2jk.pages.dev/img/Camouflaged object detection/Camouflaged-object-detection_5_2.jpg)
 
 <div align = "center">图5.2 跨数据集泛化的S-measure</div>
 
@@ -198,7 +198,7 @@ date: 2021-10-01 20:35:40
 
 
 
-![图5.3 定性分析](https://imagebed-2jk.pages.dev/img/Camouflaged-object-detection_5_2.jpg)
+![图5.3 定性分析](https://imagebed-2jk.pages.dev/img/Camouflaged object detection/Camouflaged-object-detection_5_2.jpg)
 
 <div align="center">图5.3 SINet和两个top-performing的baselines在COD10K上的定性分析</div>
 

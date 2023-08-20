@@ -1,5 +1,5 @@
 ---
-title: openslide安装避坑指南
+title: Openslide安装避坑指南
 tags: 
   - Python packages
 toc: true
@@ -29,7 +29,7 @@ date: 2021-11-09 22:29:47
 
    
 
-   <img src='https://imagebed-2jk.pages.dev/img/openslide安装避坑指南_1_1.jpg' width='70%'>
+   <img src='https://imagebed-2jk.pages.dev/img/Openslide安装避坑指南/openslide安装避坑指南_1_1.jpg' width='70%'>
 
    
 
@@ -41,7 +41,7 @@ date: 2021-11-09 22:29:47
 
    
 
-   <img src='https://imagebed-2jk.pages.dev/img/openslide安装避坑指南_1_2.jpg' width='40%'>
+   <img src='https://imagebed-2jk.pages.dev/img/Openslide安装避坑指南/openslide安装避坑指南_1_2.jpg' width='40%'>
 
    
 

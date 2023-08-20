@@ -31,7 +31,7 @@ date: 2023-03-08 16:00:14
 
 整个网络的前向传播过程也是按照这四个模块的顺序进行传播的，粗略来说就是首先输入一张（一批）图片，经过backbone得到输出为输入图像的特征图，然后将特征图输入到RPN中，得到的输出为特征图的区域建议框（anchor），并且会在这一步将从特征图上选取的一系列区域建议框映射到原特征图的位置中，并在这一步将边缘的anchor的边框与特征图的边框进行对齐（即在边缘的anchor可能出现超出图片边缘的边框，则将图片边缘当做该anchor的新边界）。然后将对应好的anchors作为输入进入RoI层， 得到的输出为固定长度的proposal feature maps。最后就是Head，将proposal feature maps作为输入，经过全连接层，进行分类和边界框回归，得到最终结果，其网络结构如图2.1所示。
 
-<center><img src= 'https://imagebed-2jk.pages.dev/img/fasterrcnn.png' width ='85%'></center>
+<center><img src= 'https://imagebed-2jk.pages.dev/img/2023-03-08-Faster-RCNN阅读笔记/fasterrcnn.png' width ='85%'></center>
 
 <center>图2.1 Faster RCNN结构图</center>
 
@@ -43,7 +43,7 @@ date: 2023-03-08 16:00:14
 
 RPN是Faster RCNN系列中最重要的一个模块，作者后续的Mask RCNN版本中也仍然沿用了这一设计，RPN的结构如图2.2所示。
 
-<center><img src='https://imagebed-2jk.pages.dev/img/RPN.png' width='70%'></center>
+<center><img src='https://imagebed-2jk.pages.dev/img/2023-03-08-Faster-RCNN阅读笔记/RPN.png' width='70%'></center>
 
 <center>图2.2 RPN结构图</center>
 

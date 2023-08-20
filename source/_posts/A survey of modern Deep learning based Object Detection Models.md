@@ -85,7 +85,7 @@ wget -c http://images.cocodataset.org/annotations/image_info_test2017.zip
 
 
 
-![图3.1 Backbones](https://imagebed-2jk.pages.dev/img/A-survey-of-modern-Deep-learning-based-Object-Detection-Models_Backbone.png)
+![图3.1 Backbones](https://imagebed-2jk.pages.dev/img/A survey of modern Deep learning based Object Detection Models/A-survey-of-modern-Deep-learning-based-Object-Detection-Models_Backbone.png)
 
 <div align = "center">图3.1 Backbones</div>
 
@@ -93,7 +93,7 @@ wget -c http://images.cocodataset.org/annotations/image_info_test2017.zip
 
 
 
-![图4.1 部分经典目标检测器](https://imagebed-2jk.pages.dev/img/A-survey-of-modern-Deep-learning-based-Object-Detection-Models_Detector.png)
+![图4.1 部分经典目标检测器](https://imagebed-2jk.pages.dev/img/A survey of modern Deep learning based Object Detection Models/A-survey-of-modern-Deep-learning-based-Object-Detection-Models_Detector.png)
 
 <div align = "center">图4.1 部分经典目标检测器</div>
 

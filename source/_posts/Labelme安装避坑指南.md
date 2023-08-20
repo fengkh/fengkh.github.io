@@ -1,5 +1,5 @@
 ---
-title: labelme安装避坑指南
+title: Labelme安装避坑指南
 tags: 
   - Python packages
 toc: true
@@ -15,7 +15,7 @@ date: 2021-11-09 22:30:05
 
 1. Anaconda[下载](https://www.anaconda.com/products/individual)对应电脑版本的，windows10系统的直接点这个就可以下载
 
-   <img src="https://imagebed-2jk.pages.dev/img/labelme安装避坑指南_1_1.png" width = "80%">
+   <img src="https://imagebed-2jk.pages.dev/img/Labelme安装避坑指南/labelme安装避坑指南_1_1.png" width = "80%">
 
 
 
@@ -42,23 +42,23 @@ date: 2021-11-09 22:30:05
 
 3. 到这里，Anaconda安装完成，开始写环境变量，在左下角的搜索栏搜索“环境变量”并打开
 
-   <img src="https://imagebed-2jk.pages.dev/img/labelme安装避坑指南_1_2.png" width = "50%">
+   <img src="https://imagebed-2jk.pages.dev/img/Labelme安装避坑指南/labelme安装避坑指南_1_2.png" width = "50%">
 
    
 
-<img src="https://imagebed-2jk.pages.dev/img/labelme安装避坑指南_1_3.png" width = "45%">
+<img src="https://imagebed-2jk.pages.dev/img/Labelme安装避坑指南/labelme安装避坑指南_1_3.png" width = "45%">
 
 
 
 点击“环境变量”，找到如下图所示的系统变量Path并双击打开
 
-<img src="https://imagebed-2jk.pages.dev/img/labelme安装避坑指南_1_4.png" width = "45%">
+<img src="https://imagebed-2jk.pages.dev/img/Labelme安装避坑指南/labelme安装避坑指南_1_4.png" width = "45%">
 
 
 
 再点击新建，如下图内容输入下面的内容`C:\ProgramData\Anaconda3\Scripts`点击确定，这里就配置好了
 
-<img src="https://imagebed-2jk.pages.dev/img/labelme安装避坑指南_1_5.png" width = "45%">
+<img src="https://imagebed-2jk.pages.dev/img/Labelme安装避坑指南/labelme安装避坑指南_1_5.png" width = "45%">
 
 
 
@@ -68,7 +68,7 @@ date: 2021-11-09 22:30:05
 
 1. 进入命令行，输入conda检查Anaconda是否安装成功，出现如下界面表示正确，进行下一步，否则重新安装Anaconda。
 
-<img src='https://imagebed-2jk.pages.dev/img/labelme安装避坑指南_2_1.png' width='80%'>
+<img src='https://imagebed-2jk.pages.dev/img/Labelme安装避坑指南/labelme安装避坑指南_2_1.png' width='80%'>
 
 2. 输入`conda create -n labelme python=3.6`并回车，这里提示[y/n]，输入y然后回车。	
 
