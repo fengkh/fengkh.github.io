@@ -1,5 +1,5 @@
 ---
-title: 深入理解Faster RCNN
+title: 目标检测之Faster RCNN
 tags:
   - 论文阅读
   - 深度学习
@@ -7,7 +7,7 @@ categories:
   - Papers
 mathjax: true
 swiper_index: 5
-description: 再读Faster RCNN论文，产生了对框架的理解和一些改进的想法。
+description: 两阶段目标检测经典算法之一
 abbrlink: 451f615a
 date: 2023-03-08 16:00:14
 ---
@@ -33,7 +33,7 @@ date: 2023-03-08 16:00:14
 
 <center><img src= 'https://imagebed-2jk.pages.dev/img/2023-03-08-Faster-RCNN阅读笔记/fasterrcnn.png' width ='85%'></center>
 
-<center>图2.1 Faster RCNN结构图</center>
+<center>图1.1 Faster RCNN结构图</center>
 
 #### 2. Backbone
 
@@ -45,10 +45,22 @@ RPN是Faster RCNN系列中最重要的一个模块，作者后续的Mask RCNN版
 
 <center><img src='https://imagebed-2jk.pages.dev/img/2023-03-08-Faster-RCNN阅读笔记/RPN.png' width='70%'></center>
 
-<center>图2.2 RPN结构图</center>
+<center>图3.1 RPN结构图</center>
 
-图2.2中红框箭头的输入则是通过backbone提取到的特征图，首先会通过红框中所示的Relu(Conv2d())，产生两个分支，上面的分支用于anchor的产生，判断哪些anchor是positive哪些是negative的，下面的分支用于计算anchor的BBox regression的偏移量，用来获取精确的proposal。
+图2.2中红框的输入是通过backbone提取到的特征图，首先会通过红框中所示的Relu(Conv2d())，产生两个分支，上面的分支用于anchor的产生，并且通过softmax判断哪些anchor是positive哪些是negative的，下面的分支用于计算anchor的BBox regression的偏移量，用来获取精确的proposal。最后的Proposal层是用来综合两个分支以得到最终的proposals，同时会剔除太小的或者超出边界的proposals。
 
 #### 4. RoI
 
+RoI Pooling首先会将Proposal模块得到的proposals框（因为此时的proposals对应的尺寸是M * N）映射到feature map的尺寸，即(M/16) * (N/16)。但是仍然有个问题需要解决：由于Proposal模块产生的proposals的形状太小不一，但是输出需要是固定的长度。在Faster RCNN中是这样实现的：首先将proposals框对应到feature map的部分从内部划分为7*7的网格，此时不同的proposals内部网格对应的实际像素个数是不相同的，如图4.1所示。然后再对每个7 * 7的网格进行最大池化处理生成proposal feature map（尺寸为1*49）。
+
+<center><img src='https://imagebed-2jk.pages.dev/img/2023-03-08-Faster-RCNN阅读笔记/roi.png' width='40%'></center>
+
+<center>图4.1 RoI Pooling示意图</center>
+
 #### 5. Head
+
+Head会利用RoI层获取的proposal feature map经过softmax层之后对目标的类别进行分类，输出cls_prob类别概率向量；同时再次对proposals进行边界框回归，以得到更精确的边界框坐标。
+
+<center><img src='https://imagebed-2jk.pages.dev/img/2023-03-08-Faster-RCNN阅读笔记/head.png' width='60%'></center>
+
+<center>图5.1 Head结构图</center>
