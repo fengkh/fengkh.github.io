@@ -542,13 +542,13 @@ tag_ui: # 留空或 index
 # "#e4f4f6" "#efefef"
 background:
   #【必选】默认背景 
-  default: url(https://imagebed-2jk.pages.dev/img/_init_/background.jpg)
+  default: url(https://imagebed-2jk.pages.dev/img/_init_/background_.jpg)
   #【可选】PC端夜间模式背景 
-  darkmode: url(https://imagebed-2jk.pages.dev/img/_init_/background.jpg)
+  darkmode: url(https://imagebed-2jk.pages.dev/img/_init_/background_.jpg)
   #【可选】移动端日间默认背景 
-  mobileday: url(https://imagebed-2jk.pages.dev/img/_init_/background.jpg)
+  mobileday: url(https://imagebed-2jk.pages.dev/img/_init_/background_.jpg)
   #【可选】移动端夜间模式背景 
-  mobilenight: url(https://imagebed-2jk.pages.dev/img/_init_/background.jpg)
+  mobilenight: url(https://imagebed-2jk.pages.dev/img/_init_/background_.jpg)
 
 # Footer Background
 footer_bg: false

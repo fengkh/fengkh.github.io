@@ -146,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://fengkh.github.io/manifest.json</loc>
+    <loc>https://fengkh.github.io/categories/index.html</loc>
     
     <lastmod>2023-03-16</lastmod>
     
@@ -164,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://fengkh.github.io/categories/index.html</loc>
+    <loc>https://fengkh.github.io/manifest.json</loc>
     
     <lastmod>2023-03-16</lastmod>
     
@@ -241,6 +241,13 @@
   </url>
   
   <url>
+    <loc>https://fengkh.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2023-08-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://fengkh.github.io/tags/%E5%8A%A8%E6%80%81/</loc>
     <lastmod>2023-08-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -255,14 +262,14 @@
   </url>
   
   <url>
-    <loc>https://fengkh.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc>
+    <loc>https://fengkh.github.io/tags/Manjaro/</loc>
     <lastmod>2023-08-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fengkh.github.io/tags/Manjaro/</loc>
+    <loc>https://fengkh.github.io/tags/Python-packages/</loc>
     <lastmod>2023-08-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -282,13 +289,6 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://fengkh.github.io/tags/Python-packages/</loc>
-    <lastmod>2023-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
@@ -299,14 +299,14 @@
   </url>
   
   <url>
-    <loc>https://fengkh.github.io/categories/Life/</loc>
+    <loc>https://fengkh.github.io/categories/Papers/</loc>
     <lastmod>2023-08-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fengkh.github.io/categories/Papers/</loc>
+    <loc>https://fengkh.github.io/categories/Life/</loc>
     <lastmod>2023-08-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
